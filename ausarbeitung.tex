@@ -1,0 +1,167 @@
+\documentclass[12pt, a4paper, ngerman]{article}
+
+% Metadata Setup
+\newcommand{\Autor}{Paul Walker und Leon Kampwerth}
+\newcommand{\Was}{Software-Qualitätsbewertung mittels Software Metriken}
+\newcommand{\Kurs}{TINF20IN}
+\newcommand{\MatrikelNummer}{3610783, 5722356}
+\newcommand{\Studiengang}{Softwarequalität}
+
+\title{\Was}
+\author{\Autor}
+\date{22.03.2023}
+
+% SETUP
+\usepackage{biblatex} % für bibliografie
+\usepackage{hyperref} % für links zum klicken
+\usepackage{color}    % für Farben (benötigt für listings)
+\usepackage{listings} % code schnipsel
+\usepackage[ngerman]{babel} % lokalisierung der Titel (Inhaltsverzeichniss)
+\usepackage{bookmark} % bookmarks für das PDF
+\usepackage{csquotes} % korrekte quotes
+\usepackage[version=3]{acro} % akronyme
+\usepackage{geometry} % seitengeometrie (margin etc einstellen)
+\usepackage{parskip}  % zeilenabstand bei neuem paragraph statt indentierung
+\usepackage{fancyhdr} % header und footer
+\usepackage{array}    % für bessere Tabellen
+\usepackage{titlesec} % um die Titel anzupassen
+\usepackage{amsfonts} % für \mathbb
+\usepackage{placeins} % für \FloatBarrier
+
+\hypersetup{
+  pdfauthor={\Autor},
+  pdftitle={\Was},
+  hidelinks
+}
+
+\geometry{
+  a4paper,
+  left=25mm,
+  right=25mm,
+  headheight=125mm,
+  top=35mm,
+  bottom=30mm,
+  footskip=15mm
+}
+
+% title setup 
+% make paragraph have a newline
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+% add bibliography
+\addbibresource{bibliography.bib}
+
+% header and footer setup
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\Was}
+\lhead{\leftmark}
+\lfoot{Autor: \Autor, Kurs: \Kurs}
+\rfoot{Seite \thepage}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancypagestyle{simple}{
+  \fancyhf{}
+  \rhead{\Was}
+  \lfoot{Autor: \Autor, Kurs: \Kurs}
+  \rfoot{Seite \thepage}
+}
+
+% acronyms
+\acsetup{
+  list/display = used,
+  pages/display = first
+}
+
+\newcommand{\reals}{\ensuremath{\mathbb{R}}}
+\newcommand{\natnums}{\ensuremath{\mathbb{N}}}
+
+% code snippet setup
+\renewcommand{\lstlistingname}{Code-Auszug}
+\renewcommand{\lstlistlistingname}{Liste der Code-Auszüge}
+
+\definecolor{black}{rgb}{0,0,0}
+\definecolor{green}{rgb}{0,0.5,0}
+\definecolor{orange}{rgb}{1,0.45,0.13}		
+\definecolor{brown}{rgb}{0.69,0.31,0.31}
+
+% python
+\lstdefinelanguage{Python}{
+  morekeywords={import, def, from, for, in, if, else, return, True, False, catch, return, null, switch, if, in, while, do, else, case, break},
+  morecomment=[l]\#,
+  morestring=[b]",
+  morestring=[b]""",
+  morestring=[b]'
+}
+
+\lstdefinestyle{light}{
+  % General design
+  basicstyle={\footnotesize\ttfamily},   
+  frame=b,
+  % line-numbers
+  xleftmargin={0.75cm},
+  numbers=left,
+  stepnumber=1,
+  firstnumber=1,
+  numberfirstline=true,	
+  % Quellcode design
+  identifierstyle=\color{black},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywordstyle=\color{green}\bfseries,
+  stringstyle=\color{orange}\ttfamily,
+  commentstyle=\color{brown}\ttfamily,
+  % Quellcode
+  alsodigit={.:;},
+  tabsize=2,
+  showtabs=false,
+  showspaces=false,
+  showstringspaces=false,
+  extendedchars=true,
+  breaklines=true,
+}
+
+\begin{document}
+\raggedright % sorgt dafür das alles strikt links ausgerichtet wird (und sorgt für mehr seiten)
+
+
+% Titlepage
+\makeatletter
+\begin{titlepage}
+  \begin{center}
+    \vspace*{1cm}
+    {\Huge\scshape \Was}\\[2cm]
+    \begin{center}
+      \linespread{1}\Huge \@title\\[2cm]
+    \end{center}
+    {\large \Studiengang}\\
+    {\large Duale Hochschule Baden-Württemberg\\ Stuttgart}\\[2cm]
+    {\large von}\\
+    {\large\bfseries \@author}
+    \vfill
+  \end{center}
+  \begin{tabular}{l@{\hspace{2cm}}l}
+    Matrikelnummer: & \MatrikelNummer \\
+    Abgabedatum:    & \@date          \\
+  \end{tabular}
+\end{titlepage}
+\makeatother
+
+% Table of content
+\tableofcontents
+
+\newpage
+%%%%%%
+% Content here
+%%%%%% 
+
+\section{Einleitung}
+
+Dies ist eine Einleitung~\cite{test}
+
+\newpage
+\printbibliography
+
+\end{document}
