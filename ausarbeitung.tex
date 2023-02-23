@@ -76,6 +76,9 @@
   pages/display = first
 }
 
+\DeclareAcronym{iso}{short=ISO, long=International Organization for Standardization}
+
+
 \newcommand{\reals}{\ensuremath{\mathbb{R}}}
 \newcommand{\natnums}{\ensuremath{\mathbb{N}}}
 
@@ -159,7 +162,47 @@
 
 \section{Einleitung}
 
-Dies ist eine Einleitung~\cite{maintainability_metrics}
+Die Meisten Menschen arbeiten jeden Tag mit verschiedener Software.
+In der Arbeit mit Office-Software oder je nach Beruf spezialisierter
+Software für bestimmte Aufgaben und/oder Maschinen.
+Zuhause nutzen viele Menschen Unterhaltunssoftware wie Spiele,
+oder Videoplatformen.
+Software ist heutzutage allgegenwärtig und die meisten Menschen,
+werden auch schon einmal Software schlechter Qualität genutzt haben.
+Das kann durch abruptes Schließen einer Applikation,
+unintuitives Design oder langer Ladezeiten 
+für den Nutzer erkennbar sein.
+Es kann recht einfach sein,
+schlechte Qualitäten in Software zu erkennen,
+allerdings lässt sich Softwarequalität so nicht Objektiv vergleichen.
+Diese Arbeit beschäftigt sich damit Metriken zu finden,
+mit denen Software Qualität Objektiv gemessen werden kann.
+
+\section{Softwarequalität}
+
+Um Softwarequalität messen zu können muss zuerst festgelegt werden,
+was Softwarequalität überhaupt ist.
+Viele Aspekte von Softwarequalität sind für den Endnutzer gar nicht
+erkennbar oder sind nur dann erkennbar,
+oder nur dann erkennbar, wenn dieser Aspekt schlechte eine schlechte Qualität hat.
+
+In dieser Arbeit wird die Deffinition von Softwarequalität 
+nach \ac{iso} 25010\cite{ISO25010} verwendet.
+Diese \ac{iso}-Norm unterteilt die Softwarequalität in einzelne
+Charakteristika.
+
+% TODO hier charakteristika auflisten.
+
+
+% * Was ist Software Qualität Überhaupt?
+%   * Software Qualität nach ISO 25010
+% * einzelne Aspekte der Softwarequalität nach ISO 25010
+%   * Aufzählen, kurz beschreiben, ... (aber nur die über-kategorien)
+% TODO Fokus setzen (ISO stellt sehr viele Qualitätskriterien zur Verfügung)
+% Am besten ein Fokus für Jeden. bsp Sicherheit und Wartbarkeit
+% * Fokusthema
+%   * Die Qualitätseigenschaft und deren unter-kategorien vorstellen
+%   * mehrere Metriken für die Unterkategorien oder eine Metrik für die Kategorie Vorstellen.
 
 \newpage
 \printbibliography
