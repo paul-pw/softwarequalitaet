@@ -2,12 +2,12 @@
 
 % Metadata Setup
 \newcommand{\Autor}{Paul Walker und Leon Kampwerth}
-\newcommand{\Was}{Software-Qualitätsbewertung mittels Software Metriken}
+\newcommand{\Was}{Ausarbeitung Softwarequalität}
 \newcommand{\Kurs}{TINF20IN}
 \newcommand{\MatrikelNummer}{3610783, 5722356}
 \newcommand{\Studiengang}{Softwarequalität}
 
-\title{\Was}
+\title{Software-Qualitätsbewertung mittels Software Metriken}
 \author{\Autor}
 \date{22.03.2023}
 
@@ -25,9 +25,10 @@
 \usepackage{fancyhdr} % header und footer
 \usepackage{array}    % für bessere Tabellen
 \usepackage{titlesec} % um die Titel anzupassen
+\usepackage{plantuml} % PLANTUML_JAR has to be set and --shell-escape
 \usepackage{amsfonts} % für \mathbb
 \usepackage{placeins} % für \FloatBarrier
-
+ 
 \hypersetup{
   pdfauthor={\Autor},
   pdftitle={\Was},
@@ -161,12 +162,12 @@
 %%%%%% 
 
 \section{Einleitung}
-
-Die Meisten Menschen arbeiten jeden Tag mit verschiedener Software.
+ 
+Die meisten Menschen arbeiten jeden Tag mit verschiedener Software.
 In der Arbeit mit Office-Software oder je nach Beruf spezialisierter
 Software für bestimmte Aufgaben und/oder Maschinen.
-Zuhause nutzen viele Menschen Unterhaltunssoftware wie Spiele,
-oder Videoplatformen.
+Zu Hause nutzen viele Menschen Unterhaltungssoftware wie Spiele,
+oder Videoplattformen.
 Software ist heutzutage allgegenwärtig und die meisten Menschen,
 werden auch schon einmal Software schlechter Qualität genutzt haben.
 Das kann durch abruptes Schließen einer Applikation,
@@ -183,26 +184,263 @@ mit denen Software Qualität Objektiv gemessen werden kann.
 Um Softwarequalität messen zu können muss zuerst festgelegt werden,
 was Softwarequalität überhaupt ist.
 Viele Aspekte von Softwarequalität sind für den Endnutzer gar nicht
-erkennbar oder sind nur dann erkennbar,
-oder nur dann erkennbar, wenn dieser Aspekt schlechte eine schlechte Qualität hat.
+erkennbar oder sind nur dann erkennbar, 
+wenn dieser Aspekt eine schlechte Qualität hat.
 
-In dieser Arbeit wird die Deffinition von Softwarequalität 
+In dieser Arbeit wird die Definition von Softwarequalität 
 nach \ac{iso} 25010\cite{ISO25010} verwendet.
-Diese \ac{iso}-Norm unterteilt die Softwarequalität in einzelne
-Charakteristika.
+In dem \ac{iso} 25010 Standard wird ein Produktqualitätsmodell
+für System und Softwarequalität.
+Nach diesem Modell wird die Qualität eines Softwaresystems oder Produkts
+durch acht Charakteristika definiert.
+Diese Charakteristika werden in Abbildung~\ref*{fig:uml:softwarequality} dargestellt.
 
-% TODO hier charakteristika auflisten.
+\begin{figure}
+  \centering
+  \begin{plantuml}
+      @startmindmap
+      + ISO 25010 \nQualitätsstandard
+      -- Funktionale Eignung
+      -- Leistungsfähigkeit
+      -- Kompatibilität
+      -- Benutzerfreundlichkeit
+      ++ Zuverlässigkeit
+      ++ Sicherheit
+      ++ Wartbarkeit
+      ++ Portabilität
+      @endmindmap
+  \end{plantuml}
+  \caption{Softwarequalität nach \ac{iso} 25010\cite{ISO25010}}
+  \label{fig:uml:softwarequality}
+\end{figure}
+
+Jedes dieser Charakteristika wird weiter in Subcharakteristika aufgeteilt.
+In dieser Arbeit wird der Fokus auf zwei bestimmte Charakteristika gesetzt
+und für jedes eine Metrik vorgestellt, 
+mit der die Qualität der Charakteristik gemessen werden kann.
+%Einzelne Metriken für jede Charakteristik der Softwarequalität zu nutzen
+%ist sinnvoll, da so die Ursache für Qualitätsprobleme schneller gefunden werden kann.
+
+% TODO hier könnten noch die einzelnen Aspekte der Softwarequalität besser beschrieben werden.
+
+\subsection{Wartbarkeit}
+
+Der Grad der Wartbarkeit ist nach \ac{iso},
+wie effektiv und effizient das Produkt oder System verändert werden kann~\cite{ISO25010}.
+Diese Veränderungen können Korrekturen, Verbesserungen
+oder Anpassungen der Software auf Änderungen des Einsatzgebiets
+oder auf Änderungen der Anforderungen sein~\cite{ISO25010}.
+Die Wartbarkeit bezieht sich auch auf die Installation von Updates~\cite{ISO25010}.
+Die Wartbarkeit ist nach \ac{iso} in weitere Subcharakteristika aufgeteilt.
+Diese Subcharakteristika sind in Abbildung~\ref{fig:uml:maintainability} dargestellt.
+
+\begin{figure}
+  \centering
+  \begin{plantuml}
+      @startmindmap
+      + ISO 25010\nQualitätsstandard
+      ++ Wartbarkeit
+      +++_ Modularität
+      +++_ Wiederverwendbarkeit
+      +++_ Analysierbarkeit
+      +++_ Modifizierbarkeit
+      +++_ Testbarkeit
+      @endmindmap
+  \end{plantuml}
+  \caption{Wartbarkeit nach \ac{iso} 25010\cite{ISO25010}}
+  \label{fig:uml:maintainability}
+\end{figure}
+
+\subsubsection{Modularität}
+
+Die Modularität wird daran gemessen,
+inwieweit das System oder Programm aus einzelnen Teilen besteht
+und Änderungen an einem Teil der Software andere Teile nur minimal oder gar nicht beeinflussen~\cite{ISO25010}.
+Module sind Softwareattribute, die Software in unabhängige Einzelteile trennen~\cite{IEEE24765}.
+
+\subsubsection{Wiederverwendbarkeit}
+
+Die Wiederverwendbarkeit ist der Grad, 
+zu dem ein Teil des Systems in mehr als einem System
+oder beim Erstellen von weiteren Teilen des Systems verwendet werden kann~\cite{ISO25010}.
+Die Wiederverwendung bezieht sich dabei nicht nur auf Software,
+sondern auch auf Dokumentation, Software-Design, Applikationstests und weitere Teile des Systems~\cite{IEEE1517}.
+
+\subsubsection{Analysierbarkeit}
+
+Wie effektiv und effizient es möglich ist,
+den Einfluss auf ein Produkt oder System abzuschätzen,
+wenn ein oder mehrere Teile verändert werden,
+ist durch die Analysierbarkeit definiert~\cite{ISO25010}.
+Außerdem wie gut der Ursprung von Fehlern
+im Produkt oder System diagnostiziert werden kann~\cite{ISO25010}.
+
+\subsubsection{Modifizierbarkeit}
+
+Die Modifizierbarkeit ist ein Maßstab dafür wie effektiv und effizient sich ein Produkt oder System
+ändern lässt, ohne dabei Defekte einzuführen oder die Produktqualität zu verschlechtern~\cite{ISO25010}.
+
+Die Modifizierbarkeit kann durch die \emph{Modularität} und die \emph{Analysierbarkeit} beeinflusst werden~\cite{ISO25010}.
+
+\subsubsection{Testbarkeit}
+
+Der Grad der Testbarkeit ist,
+wie effektiv und effizient Testkriterien für ein Produkt oder System definiert werden können
+und wie effektiv und effizient Tests für das Produkt oder System durchgeführt werden können~\cite{ISO25010}.
+Zusätzlich zur Erstellung der Testkriterien und der Durchführung der Tests,
+spielt es auch eine Rolle wie gut objektive und messbare Tests erstellt werden können,
+die feststellen, ob ein bestimmtes Kriterium erfüllt wurde~\cite{IEEE24765}.
+
+\subsection{TODO @Leon Charakteristika X}
+
+% TODO @leon Hier deine Charakteristik hin und erklären.
+
+\section{Software Metriken}
+
+% * Was sind Software Metriken
+% * Wofür sind Software Metriken nützlich
+%     * Software Vergleichen
+%     * Probleme Aufzeigen
+% * Software Metriken integriert in CI/CD (test coverage)
+% * Software Metriken können helfen die Chefs zu überzeugen mehr in die Entwicklung zu Investieren
+% TODO mehr Recherche Was Software Metriken Nützen.
+
+\subsection{Wartbarkeit}
+
+Viele Charakteristika der Wartbarkeit lassen sich über die Dauer oder Effizienz von Wartungsaufgaben messen.
+Es kann beispielsweise die Zeit gemessen werden, die benötigt wird,
+um eine Änderung an der Software durchzuführen,
+um damit die Modifizierbarkeit zu charakterisieren~\cite{maintainability_metrics}.%II C 
+
+Diese Metriken lassen sich allerdings nur bei konkreten Wartungsaufgaben messen.
+Das ist problematisch, da so die Qualität der Software nur durch großen Aufwand bestimmt werden kann.
+Ziel hier ist es daher eine Metrik zu finden, mit der sich die Wartbarkeit ohne großen Aufwand bestimmen lässt.
+Das Paper \emph{A Practical Model for Measuring Maintainability} von Ilja Heitlager, Tobias Kuipers und Joost Visser~\cite{maintainability_metrics}
+stellt eine Möglichkeit dar, die Wartbarkeit ohne großen Aufwand zu messen.
+
+Dafür werden einige einfache Kennzahlen der Software 
 
 
-% * Was ist Software Qualität Überhaupt?
-%   * Software Qualität nach ISO 25010
-% * einzelne Aspekte der Softwarequalität nach ISO 25010
-%   * Aufzählen, kurz beschreiben, ... (aber nur die über-kategorien)
-% TODO Fokus setzen (ISO stellt sehr viele Qualitätskriterien zur Verfügung)
-% Am besten ein Fokus für Jeden. bsp Sicherheit und Wartbarkeit
-% * Fokusthema
-%   * Die Qualitätseigenschaft und deren unter-kategorien vorstellen
-%   * mehrere Metriken für die Unterkategorien oder eine Metrik für die Kategorie Vorstellen.
+
+Wichtig für die hier präsentierten Metriken ist der Begriff der Einheit und die Einheitengröße.
+Eine Einheit ist das kleinste ausführbare Stück Code~\cite{maintainability_metrics}.
+Je nach Programmiersprache kann eine Einheit eine Funktion, eine Klasse oder aber das gesamte Programm sein~\cite{maintainability_metrics}.
+
+\subsubsection{Modularität}
+
+Eine einfache Metrik für die Modularität ist die Modulanzahl
+in dem betrachteten Teil der Software.
+Nachteil dieser Metrik ist, dass sie nicht aussagt,
+inwieweit Änderungen an einem Modul die anderen Module beeinflussen.
+Nach ISO 25010 sollen Änderungen an einem Modul,
+die anderen Module möglichst wenig beeinflussen~\cite{ISO25010}.
+
+Andere Metriken sind die Anzahl der Klassen und die Klassengröße.
+Das gibt auch eine gewisse objektive Aussage über die Modularität.
+Für eine hohe Modularität ist eine geringe Kopplung der Klassen und
+hohe Kohäsion, also hohe Zusammengehörigkeit, innerhalb der Klassen nötig um zu gewährleisten,
+dass Änderungen an einem Modul, die anderen Module minimal oder gar nicht beeinflussen.
+Viele kleine Klassen sprechen für eine hohe Kohäsion,
+da in einer kleinen Klasse nur wenig Funktionalität,
+die dann aber stark zusammenhängt, implementiert werden kann.
+Daher kann bei vielen kleinen Klassen von einer höheren möglichen Modularität
+als bei wenigen großen Klassen ausgegangen werden.
+Allerdings können auch diesen Metriken keine direkte Aussage über die Modularität liefern.
+
+In dieser Arbeit werden alle der drei Metriken verwendet,
+um die Modularität der entwickelten Softwarekomponenten zu messen
+und eins zu eins verrechnet, um einen Wert für die Modularität zu bekommen.
+
+\subsubsection{Wiederverwendbarkeit}
+
+Die Wiederverwendbarkeit lässt sich nicht direkt messen,
+allerdings kann gemessen werden wie oft Softwarekomponenten
+tatsächlich wiederverwendet werden, also die Wiederverwendung.
+Bei hoher Wiederverwendung muss auch die Wiederverwendbarkeit hoch sein.
+Allerdings muss eine niedrige Wiederverwendung nicht heißen,
+dass die Softwarekomponenten nicht wiederverwendbar sind.
+Trotzdem ist eine niedrige Wiederverwendung ein starker Indikator für niedrige Wiederverwendbarkeit,
+da Softwarekomponenten, die Wiederverwendbar sind, oft auch wiederverwendet werden.
+
+Die Wiederverwendung lässt sich direkt messen.
+Dafür muss gezählt werden,
+wie oft der zu analysierende Teil der Software
+an anderen Stellen in der Software verwendet wird.
+Bei Klassen kann beispielsweise gezählt werden an wie vielen Stellen diese instanziiert werden,
+oder auf sie zugegriffen wird.
+
+Eine weitere Metrik für die Wiederverwendung ist die Code-Duplikation und die Einheitengröße.
+Wenn hohe Code-Duplikation vorhanden ist, ist die Wiederverwendung in der Regel gering,
+da duplizierter Code oft wiederverwendbarer implementiert werden kann.
+Durch Extrahieren des duplizierten Codes in Funktionen oder Klassen,
+kann die Wiederverwendung beispielsweise erhöht werden.
+Bei geringer Code-Duplikation kann davon ausgegangen werden,
+dass eine hohe Wiederverwendung des Codes gegeben ist.
+Für eine hohe Wiederverwendbarkeit ist es wichtig,
+dass Einheiten nur wenige Aufgaben haben.
+Meistens werden nur einzelne Aufgaben an anderer Stelle benötigt,
+weshalb es wichtig ist, dass Einheiten nur eine oder wenige Aufgaben haben,
+um eine Einheit wiederzuverwenden.
+Da Einheiten die nur eine oder wenige Aufgaben haben, in der Regel recht klein sind,
+deuten geringe Einheitengrößen eine höhere Wiederverwendbarkeit an.
+Code-Duplikation wird in duplizierten Code-Zeilen gemessen und bewertet
+und Einheitengröße wird in durchschnittlichen Code-Zeilen pro Einheit gemessen und bewertet.
+Die Ergebnisse werden mit der Gewichtung eins zu eins verrechnet,
+um eine Metrik zur Wiederverwendbarkeit zu bekommen.
+
+\subsubsection{Analysierbarkeit}
+
+Die Analysierbarkeit einer Softwarekomponente wird von verschiedene Faktoren beeinflusst.
+Aus einigen dieser Faktoren lässt sich eine Metrik zu Analysierbarkeit erstellen.
+Es eignen sich besonders Faktoren, die einfach messbar sind.
+Hier werden nach~\cite{maintainability_metrics} Code-Volumen, Komplexität der Einheiten,
+Code-Duplikation, Einheitengröße und Unit-Testing als einfach messbare Faktoren verwendet.
+% TODO einfluss der einzelnen auf die Analysierbarkeit
+
+\subsubsection{Modifizierbarkeit}
+
+In~\cite{maintainability_metrics} wird die Komplexität der Einheiten und die Code-Duplikation
+als Metrik für die Modifizierbarkeit genannt.
+Code-Duplikation verringert die Modifizierbarkeit, da an Stellen mit dupliziertem Code,
+alle Teile des duplizierten Codes gleichermaßen geändert werden müssen.
+Das erhöht den Modifikations-Aufwand stark und erhöht die Chance,
+dass bei Modifikationen Teile des duplizierten Codes vergessen werden zu ändern und so Fehler im Programm entstehen.
+Die Komplexität der Einheiten ist wichtig, da höhere Komplexität von Einheiten dafür sorgt,
+dass es schwieriger ist diese Einheiten zu modifizieren, ohne Fehler in der Software zu erzeugen.
+
+\subsubsection{Testbarkeit}
+
+Die Testbarkeit von Software hängt unter anderem von der Komplexität der Einheiten,
+der Einheitengröße und der Zahl der Unit-Tests ab~\cite{maintainability_metrics}.
+Der Einfluss der Unit-Tests auf die Testbarkeit ist einfach zu erkennen.
+Viele Unit-Tests sind ein Indikator für gute Testbarkeit,
+denn das bedeutet, dass die Software im allgemeinen testbar ist.
+Kleine Einheitengröße sorgt auch für eine bessere Testbarkeit,
+da es einfacher ist für kleine Einheiten, die weniger Aufgaben haben, Testfälle zu spezifizieren.
+Für kleinere Einheiten müssen in der Regel auch weniger Testfälle spezifiziert werden
+als bei großen Einheiten um eine hohe Testabdeckung und damit eine höhere Testbarkeit zu erreichen.
+Bei großen Einheiten ist auch eine höhere Zahl von Seiteneffekte zu erwarten, die das Testen erschweren.
+Gewisse Seiteneffekte lassen sich auch in kleinen Einheiten nicht vermeiden,
+allerdings ist mit weniger Seiteneffekten als bei großen Einheiten zu rechnen.
+Kleinere Einheiten haben weniger Aufgaben und benötigen damit auch weniger Seiteneffekte.
+Um eine Einheit testen zu können, müssen alle Seiteneffekte isoliert und kontrolliert werden.
+Ist das nicht der Fall, kann kein sinnvoller Test spezifiziert werden.
+Der Aufwand eine Einheit zu testen steigt stark an, je mehr Seiteneffekte isoliert und kontrolliert werden müssen.
+Außerdem lassen sich einige Seiteneffekte speziell im Oberflächenbereich teilweise gar nicht isolieren und kontrollieren,
+was dafür sorgt, dass die ganze Einheit nicht getestet werden kann.
+Die Komplexität der Einheiten spielt auch eine Rolle,
+denn es ist einfacher für weniger komplexe Einheiten Testfälle zu spezifizieren als für sehr komplexe Einheiten.
+
+\subsection{TODO @Leon Metrik X}
+
+% TODO eine oder mehrere Metriken zu der gewählten Charakteristik vorstellen.
+
+\section{Ausblick}
+
+% * Welche Punkte wurden in der Arbeit abgehandelt
+% * Welche stellen fehlen in dieser Arbeit Noch
+%   * Die anderen Qualitätscharakteristika
+%   * Weitere Metriken für die Gewählten Charakteristika
 
 \newpage
 \printbibliography
