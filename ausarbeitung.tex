@@ -163,6 +163,19 @@
 % Content here
 %%%%%% 
 
+\renewcommand{\abstractname}{Abstract} % dass Abstract auch Abstract heißt und nicht zusammenfassung
+\begin{abstract}
+Softwarequalität zu messen kann sich mitunter als schwierig herausstellen.
+Diese Arbeit hat das Ziel einfache Metriken für Qualitätscharakteristika
+zu erarbeiten.
+Diese Metriken sollen einfach automatisiert messbar sein
+und so einen kontinuierlichen Indikator für die Softwarequalität geben,
+der auch in \ac{cicd} Prozesse genutzt werden kann.
+Der Fokus wird auf die Qualitätscharakteristika
+Wartbarkeit und % TODO @Leon
+gesetzt.
+\end{abstract}
+
 \section{Einleitung}
 
 Die meisten Menschen arbeiten jeden Tag mit verschiedener Software.
@@ -220,8 +233,17 @@ Jedes dieser Charakteristika wird weiter in Subcharakteristika aufgeteilt.
 In dieser Arbeit wird der Fokus auf zwei bestimmte Charakteristika gesetzt
 und für jedes eine Metrik vorgestellt,
 mit der die Qualität der Charakteristik gemessen werden kann.
-%Einzelne Metriken für jede Charakteristik der Softwarequalität zu nutzen
-%ist sinnvoll, da so die Ursache für Qualitätsprobleme schneller gefunden werden kann.
+
+Eine einzelne Metrik für Softwarequalität zu erstellen ist schwer,
+da die Softwarequalität durch so viele Charakteristika beeinflusst wird.
+Außerdem würde eine einzelne Metrik für die Softwarequalität nur bedingt nützlich sein.
+Es wäre zwar möglich die generelle Qualität einer Software zu quantifizieren,
+allerdings lässt sich dann nicht herausfinden, 
+in welchen Bereichen Mängel an der Qualität der Software vorliegen.
+Es ist sinnvoller einzelne Metriken für die Qualitätscharakteristika
+zu erstellen, wie es auch in dieser Arbeit gemacht wird,
+da so die Ursache für potenzielle Qualitätsmängel
+einfacher gefunden werden kann.
 
 % TODO hier könnten noch die einzelnen Aspekte der Softwarequalität besser beschrieben werden.
 
@@ -414,7 +436,7 @@ Das kann gemessen werde, indem gezählt wird wie oft Klassen genutzt werden
 oder wie oft Funktionen aufgerufen werden.
 Hier gilt, höher ist besser.
 
-Diese Kennzahlen werden wie folgt kombiniert
+Diese Kennzahlen werden wie folgt kombiniert,
 um Metriken für die Subcharakteristika zu erhalten.
 
 \paragraph{Modularität}
