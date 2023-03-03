@@ -157,8 +157,12 @@
 
 % Table of content
 \tableofcontents
-
 \newpage
+
+\thispagestyle{simple}
+\printacronyms[name=Abkürzungsverzeichnis, heading=section*]
+\newpage
+
 %%%%%%
 % Content here
 %%%%%% 
@@ -257,6 +261,27 @@ oder auf Änderungen der Anforderungen sein~\cite{ISO25010}.
 Die Wartbarkeit bezieht sich auch auf die Installation von Updates~\cite{ISO25010}.
 Die Wartbarkeit ist nach \ac{iso} in weitere Subcharakteristika aufgeteilt.
 Diese Subcharakteristika sind in Abbildung~\ref{fig:uml:maintainability} dargestellt.
+
+Die Wartbarkeit ist eine der wichtigsten Qualitätscharakteristika für Entwickler.
+Viele andere Qualitätscharakteristika wie 
+die Benutzerfreundlichkeit oder die Leistungsfähigkeit
+bewerten äußere Eigenschaften,
+die für den Entwicklungsprozess nicht generell eine Rolle spielen.
+So ist die Leistungsfähigkeit von Software 
+meist nur in kritischen Bereichen der Software relevant.
+Die Benutzerfreundlichkeit von Software spielt 
+in der Regel nur in Bereichen, mit denen ein Benutzer interagiert eine Rolle.
+Dagegen ist die Wartbarkeit von Software
+immer dann relevant, 
+wenn an und mit bestehendem Quellcode gearbeitet werden muss.
+Softwareprodukte oder Systeme,
+die eine hohe Wartbarkeit aufweisen,
+werden in der Entwicklung und der Wartung einfacher sein
+als Softwareprodukte oder Systeme,
+die eine geringe Wartbarkeit aufweisen.
+Außerdem muss während des ganzen Entwicklungsprozess
+darauf geachtet werden die potenziell geltenden 
+Regeln und Vorschriften zur Wartbarkeit von Software einzuhalten.
 
 \begin{figure}
   \centering
@@ -523,7 +548,7 @@ da für komplexe Einheiten voraussichtlich mehr und komplexere Testfälle spezif
       & \rotate Modulanzahl
       & \rotate Wiederverwendung von Einheiten \\\hline
       Modularität           & & & &x& &x& \\\hline
-      Wieder-verwendbarkeit & & &x&x& & &x\\\hline
+      Wiederverwendbarkeit  & & &x&x& & &x\\\hline
       Analysierbarkeit      &x& &x&x&x& & \\\hline
       Modifizierbarkeit     & &x&x& & & & \\\hline
       Testbarkeit           & &x& &x&x& & \\\hline
