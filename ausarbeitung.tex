@@ -359,7 +359,7 @@ Diese Subcharakteristika sind in Abbildung~\ref{fig:uml:security} dargestellt.
     ++ Sicherheit
     +++_ Vertraulichkeit
     +++_ Integrität
-    +++_ Unnachgibigkeit
+    +++_ Unbestreitbarkeit
     +++_ Verantwortlichkeit
     +++_ Authentizität
     @endmindmap
@@ -368,7 +368,41 @@ Diese Subcharakteristika sind in Abbildung~\ref{fig:uml:security} dargestellt.
   \label{fig:uml:security}
 \end{figure}
 
-% TODO @leon Hier deine Charakteristik hin und erklären.
+\subsubsection{Vertraulichkeit}
+
+Vertraulichkeit misst, wie gut das System sicherstellen kann, 
+dass ein Zugriff auf Daten nur von berechtigten Benutzern durchgeführt werden kann~\cite{ISO25010}.
+
+\subsubsection{Integrität}
+
+Die Integrität eines Systems beschreibt wie gut es den unauthorisierten Zugriff 
+oder die Modifikation auf seine Programme oder Daten verhindern kann~\cite{ISO25010}.
+
+\subsubsection{Unbestreitbarkeit}
+
+Der Grad der Unbestreitbarkeit beschreibt, wie gut ein System beweisen kann, 
+dass eine Aktion oder ein Ereignis stattgefunden hat.
+So soll es einer Entität nicht möglich sein, dies zu bestreiten~\cite{ISO25010}.
+
+Nach der \ac{iso} gibt es zwei Möglichkeit dies zu erreichen.
+Der Ursprungsnachweis ist die erste Möglichkeit. 
+Hier erhällt das System (der Empfänger) einen Nachweis, wer die Aktion oder das Ereignis ausgelöst hat.
+Dies verhindert, dass eine Entität bestreiten kann, dass sie die Aktion oder das Ereignis ausgelöst hat~\cite{ISO7498-2}.
+Die zweite Möglichkeit ist der Zustellnachweis.
+Hier erhält die Entität, die die Aktion oder das Ereignis ausgelöst hat, 
+einen Nachweis, dass das System (der Empfänger) die Aktion oder das Ereignis durchgeführt hat.
+Dies verhindert, dass das System bestreiten kann, dass es die Anweisungen erhalten hat~\cite{ISO7498-2}.
+Beide Möglchkeiten können einzeln eingesetzt werden oder auch kombiniert werden.
+
+\subsubsection{Verantwortlichkeit}
+
+Verantwortlichkeit gibt an wie gut die Aktionen einer Entität (z.B. Person, System) auf dieses zurückgeführt werden können~\cite{ISO25010}.
+Die Verantwortlichkeit kann durch die \emph{Unnachgibigkeit} und die \emph{Integrität} des Systems beeinflusst werden. 
+
+\subsubsection{Authentizität}
+Der Grad der Gewissheit, mit dem die Identität einer Entität (z.B. Person, System) 
+bewiesen werden kann wird durch die Authentizität definiert~\cite{ISO25010}.
+Das Ziel ist es mit Sicherheit nachweisen zu können, das eine Entität auch die ist, die sie angibt zu sein~\cite{ISO27000}.
 
 \section{Software Metriken}
 
