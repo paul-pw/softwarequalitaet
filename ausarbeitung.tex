@@ -340,7 +340,33 @@ Zusätzlich zur Erstellung der Testkriterien und der Durchführung der Tests,
 spielt es auch eine Rolle wie gut objektive und messbare Tests erstellt werden können,
 die feststellen, ob ein bestimmtes Kriterium erfüllt wurde~\cite{IEEE24765}.
 
-\subsection{TODO @Leon Charakteristika X}
+\subsection{Sicherheit}
+
+Sicherheit beschreibt nach \ac{iso}, wie gut ein Produkt oder ein System die Informationen und Daten schützt.
+Ziel ist es sicherzustellen, dass Personen und andere Systeme nur den Grad an Zugriff auf die Daten haben, für den sie berechtigt sind~\cite{ISO25010}.
+Dies bezieht sich sowohl auf die Daten, die vom System gespeichert werden, als auch auf die Daten, die vom System übertragen werden~\cite{ISO25010}.
+Sicherheit ist ein wichtiges Qualitätsmerkmal für Software und verbessert das Vertrauen der Benutzer und der Stakeholder in die Software~\cite{ISO25010}.
+Die Sicherheit ist nach \ac{iso} in weitere Subcharakteristika aufgeteilt.
+Diese Subcharakteristika sind in Abbildung~\ref{fig:uml:security} dargestellt.
+
+% TODO: hier generelles blub blub über sicherheit und wie es aktuell darum steht (statistiken, etc.)
+
+\begin{figure}
+  \centering
+  \begin{plantuml}
+    @startmindmap
+    + ISO 25010\nQualitätsstandard
+    ++ Sicherheit
+    +++_ Vertraulichkeit
+    +++_ Integrität
+    +++_ Unnachgibigkeit
+    +++_ Verantwortlichkeit
+    +++_ Authentizität
+    @endmindmap
+  \end{plantuml}
+  \caption{Sicherheit nach \ac{iso} 25010~\cite{ISO25010}}
+  \label{fig:uml:security}
+\end{figure}
 
 % TODO @leon Hier deine Charakteristik hin und erklären.
 
