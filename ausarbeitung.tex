@@ -379,6 +379,13 @@ da sie helfen Eigenschaften der Software zu objektifizierten
 und sich so beispielsweise bestimmte Entwicklungstätigkeiten,
 wie das Refactoring von Software
 besser gegenüber den Stakeholdern rechtfertigen lassen.
+Stakeholder können mithilfe von Softwaremetriken
+den Entwicklungsprozess besser nachvollziehen
+und so besser und gezielter reagieren.
+Wenn beispielsweise die Entwicklung eines neuen Features
+die Softwarequalität stark verschlechtert,
+kann mehr Zeit für die Entwicklung dieses Features
+eingeplant werden, damit Qualitätsstandards eingehalten werden können.
 
 Mit Softwaremetriken die,
 die Softwarequalität quantifizieren
@@ -390,14 +397,6 @@ Um diese Regeln umzusetzen ist es hilfreich
 die nötigen Metriken automatisch zu generieren
 und Änderungen an der Software nur dann zu erlauben,
 wenn die Regeln eingehalten werden.
-
-% * Was sind Software Metriken
-% * Wofür sind Software Metriken nützlich
-%     * Software Vergleichen
-%     * Probleme Aufzeigen
-% * Software Metriken integriert in CI/CD (test coverage)
-% * Software Metriken können helfen die Chefs zu überzeugen mehr in die Entwicklung zu Investieren
-% TODO mehr Recherche Was Software Metriken Nützen.
 
 \subsection{Wartbarkeit}
 
@@ -519,10 +518,13 @@ Eine geringe Einheitengröße deutet daher auf eine höhere Wiederverwendbarkeit
 Nach~\cite{maintainability_metrics} werden Code-Volumen, Code-Duplikation, Einheitengröße
 und Unit-Testabdeckung verwendet, um die Analysierbarkeit zu quantifizieren.
 Geringes Code-Volumen und geringe Einheitengröße hilft
-schnell einen Überblick über den Quellcode zu bekommen.
+schnell einen Überblick über den Quellcode zu bekommen,
+da weniger Quellcode gelesen werden muss, um die Funktion der Software zu verstehen
+und die Auswirkungen von Änderungen abzuschätzen.
 Unit-Tests helfen die Funktionsweise des Quellcodes zu verstehen.
+Außerdem helfen Unit-Tests dabei Fehler in der Software schneller finden zu können
+und den Ursprung dieser Fehler zu finden und zu analysieren.
 Eine hohe Quellcode-Duplikation erschwert hingegen das Verständnis.
-% TODO einfluss der einzelnen auf die Analysierbarkeit
 
 \paragraph{Modifizierbarkeit}
 
@@ -605,7 +607,6 @@ Im extremsten Fall, kann eine Änderung auch abgelehnt werden, wenn die Wartbark
 
 \section{Ausblick}
 
-% TODO kritische Auseinandersetzung mit dieser Metrik.
 Die hier vorgestellte Metrik zur Wartbarkeit macht es zwar einfach
 die Wartbarkeit von Softwareprodukten und Softwaresystemen
 zu messen, allerdings hat diese Metrik auch einige Nachteile.
@@ -629,12 +630,6 @@ die Gewichtungen an andere Wartbarkeit-Metriken angepasst werden.
 In einer weiteren Arbeit ist es außerdem Denkbar weitere Metriken zu finden,
 mit denen die übrigen Qualitätscharakteristika 
 einfach quantifiziert werden können.
-
-
-% * Welche Punkte wurden in der Arbeit abgehandelt
-% * Welche stellen fehlen in dieser Arbeit Noch
-%   * Die anderen Qualitätscharakteristika
-%   * Weitere Metriken für die Gewählten Charakteristika
 
 \newpage
 \printbibliography
