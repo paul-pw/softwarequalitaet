@@ -176,7 +176,7 @@ Diese Metriken sollen einfach automatisiert messbar sein
 und so einen kontinuierlichen Indikator für die Softwarequalität geben,
 der auch in \ac{cicd} Prozesse genutzt werden kann.
 Der Fokus wird auf die Qualitätscharakteristika
-Wartbarkeit und % TODO @Leon
+Wartbarkeit und Sicherheit
 gesetzt.
 \end{abstract}
 
@@ -352,9 +352,81 @@ Zusätzlich zur Erstellung der Testkriterien und der Durchführung der Tests,
 spielt es auch eine Rolle wie gut objektive und messbare Tests erstellt werden können,
 die feststellen, ob ein bestimmtes Kriterium erfüllt wurde~\cite{IEEE24765}.
 
-\subsection{TODO @Leon Charakteristika X}
+\subsection{Sicherheit}
 
-% TODO @leon Hier deine Charakteristik hin und erklären.
+Sicherheit beschreibt nach \ac{iso}, wie gut ein Produkt oder ein System die Informationen und Daten schützt.
+Ziel ist es sicherzustellen, dass Personen und andere Systeme nur den Grad an Zugriff auf die Daten haben, für den sie berechtigt sind~\cite{ISO25010}.
+Dies bezieht sich sowohl auf die Daten, die vom System gespeichert werden, als auch auf die Daten, die vom System übertragen werden~\cite{ISO25010}.
+Sicherheit ist ein wichtiges Qualitätsmerkmal für Software und verbessert das Vertrauen der Benutzer und der Stakeholder in die Software~\cite{ISO25010}.
+Die Sicherheit ist nach \ac{iso} in weitere Subcharakteristika aufgeteilt.
+Diese Subcharakteristika sind in Abbildung~\ref{fig:uml:security} dargestellt.
+
+Ähnlich zur Wartbarkeit ist auch Sicherheit ein sehr wichtiges Qualitätscharakteristika.
+Sicherheit wird jedoch nur dann bemerkt wird, wenn sie abwesend ist und 
+die Folgen fehlender Sicherheit zeigen sich meist erst einige Zeit nach der Entwicklungsphase.
+Daher hat die Sicherheit der Software für viele Entwickler eher eine geringere Priorität 
+und die Erfahrung mit dem Themenbereich ist eher gering~\cite{Roshaidie_Liang_Jun_Yew_Fatima-Tuz-Zahra_2020}~\cite{Tahaei_Jenkins_Vaniea_Wolters_2021}.
+Trotz einem starken Anstieg an Hackerattacken (insbesondre durch den Einsatz von Ransomware) 
+in den letzten Jahren~\cite{BSI_2022}~\cite{Statistik_Cybersecurity_2022} ist Sicherheit weiterhin kein festes Kriterium 
+in der Design- und Entwicklungsphase vieler Teams.
+Stattdessen wird die Sicherheit meist kurz vor dem Ende der Entwicklung bedacht~\cite{Roshaidie_Liang_Jun_Yew_Fatima-Tuz-Zahra_2020}, 
+was die Möglichkeit zum Beheben von architekturellen oder groben Entwicklungsfehlern sehr schwer macht.
+Um die Qualität der Sicherheit einer Software zu erhöhen, muss sie schon vor der eigentlichen Entwicklung, 
+in der Designphase, mit bedacht werden. Ähnlich zur Wartbarkeit gilt es Regeln und Vorschriften zu definieren, 
+die über die Entwicklung hinweg eingehalten werden.
+
+\begin{figure}
+  \centering
+  \begin{plantuml}
+    @startmindmap
+    + ISO 25010\nQualitätsstandard
+    ++ Sicherheit
+    +++_ Vertraulichkeit
+    +++_ Integrität
+    +++_ Unbestreitbarkeit
+    +++_ Verantwortlichkeit
+    +++_ Authentizität
+    @endmindmap
+  \end{plantuml}
+  \caption{Sicherheit nach \ac{iso} 25010~\cite{ISO25010}}
+  \label{fig:uml:security}
+\end{figure}
+
+\subsubsection{Vertraulichkeit}
+
+Vertraulichkeit misst, wie gut das System sicherstellen kann, 
+dass ein Zugriff auf Daten nur von berechtigten Benutzern durchgeführt werden kann~\cite{ISO25010}.
+
+\subsubsection{Integrität}
+
+Die Integrität eines Systems beschreibt wie gut es den unauthorisierten Zugriff 
+oder die Modifikation auf seine Programme oder Daten verhindern kann~\cite{ISO25010}.
+
+\subsubsection{Unbestreitbarkeit}
+
+Der Grad der Unbestreitbarkeit beschreibt, wie gut ein System beweisen kann, 
+dass eine Aktion oder ein Ereignis stattgefunden hat.
+So soll es einer Entität nicht möglich sein, dies zu bestreiten~\cite{ISO25010}.
+
+Nach der \ac{iso} gibt es zwei Möglichkeit dies zu erreichen.
+Der Ursprungsnachweis ist die erste Möglichkeit. 
+Hier erhällt das System (der Empfänger) einen Nachweis, wer die Aktion oder das Ereignis ausgelöst hat.
+Dies verhindert, dass eine Entität bestreiten kann, dass sie die Aktion oder das Ereignis ausgelöst hat~\cite{ISO7498-2}.
+Die zweite Möglichkeit ist der Zustellnachweis.
+Hier erhält die Entität, die die Aktion oder das Ereignis ausgelöst hat, 
+einen Nachweis, dass das System (der Empfänger) die Aktion oder das Ereignis durchgeführt hat.
+Dies verhindert, dass das System bestreiten kann, dass es die Anweisungen erhalten hat~\cite{ISO7498-2}.
+Beide Möglchkeiten können einzeln eingesetzt werden oder auch kombiniert werden.
+
+\subsubsection{Verantwortlichkeit}
+
+Verantwortlichkeit gibt an wie gut die Aktionen einer Entität (z.B. Person, System) auf dieses zurückgeführt werden können~\cite{ISO25010}.
+Die Verantwortlichkeit kann durch die \emph{Unnachgibigkeit} und die \emph{Integrität} des Systems beeinflusst werden. 
+
+\subsubsection{Authentizität}
+Der Grad der Gewissheit, mit dem die Identität einer Entität (z.B. Person, System) 
+bewiesen werden kann wird durch die Authentizität definiert~\cite{ISO25010}.
+Das Ziel ist es mit Sicherheit nachweisen zu können, das eine Entität auch die ist, die sie angibt zu sein~\cite{ISO27000}.
 
 \section{Software Metriken}
 
@@ -363,7 +435,7 @@ die zur Bewertung von Softwareprodukten und Softwaresystemen
 genutzt werden können.
 Diese Metriken können verschiedene Aspekte der Software Bewerten.
 Hier werden Metriken vorgestellt,
-mit denen die Wartbarkeit und die % TODO @leon hier eintragen was du machst
+mit denen die Wartbarkeit und die Sicherheit
 analysiert werden könne.
 
 Software Metriken geben sowohl den Entwicklern
@@ -601,9 +673,11 @@ Damit können Änderungen an der Software ausgewertet werden
 und gewarnt werden, wenn die Wartbarkeit durch Änderungen an der Software verschlechtert wird.
 Im extremsten Fall, kann eine Änderung auch abgelehnt werden, wenn die Wartbarkeit verschlechtert wird.
 
-\subsection{TODO @Leon Metrik X}
+\subsection{Sicherheit}
 
 % TODO eine oder mehrere Metriken zu der gewählten Charakteristik vorstellen.
+% Hingehen und metriken aus quellen suchen und vorstellen
+% Metriken listen, die beliebt sind und mit den Kriterien oben verknüpfen, wie bei der Wartbarkeit!
 
 \section{Ausblick}
 
