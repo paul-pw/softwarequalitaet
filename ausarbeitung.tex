@@ -774,7 +774,7 @@ Die Stall Ratio wird mit der Formel \ref{eq:sr} berechnet.
   \text{Stall Ratio} = \frac{ \text{Nicht-zielführende Zeilen in einer Schleife} }{ \text{Gesamtanzahl der Zeilen in der Schleife} }
 \end{equation}
 
-# Villeicht ein Beispiel?
+% Villeicht ein Beispiel?
 Nicht alle Stall Statements sind schlecht, gerade das Schreiben von Logs, Fehlermeldungen, etc. sind notwendig.
 Dennoch sollte auch die Anzahl sollten auch diese Stall Statements nicht allzu oft vorkommen.
 Angreifer nutzen häufig Denial of Service Angriffe um die Verfügbarkeit von Systemen zu beeinträchtigen.
@@ -782,9 +782,22 @@ Eine hohe Anzahl an Stall Statements kann die Auswirkungen eines solchen Angriff
 
 \paragraph{Coupling Corruption Propagation (CCP)}
 
-# Hier weiter
+Kopplung von Methoden meint, dass zwei oder mehr Methoden voneinander abhängig sind.
+Ein Beispiel für eine Kopplung ist die Verwendung von globalen Variablen oder 
+die Verwendung von Methoden aus anderen Klassen.
+Die Effekte einer Kopplung können sich schnell auf mehrere Methoden tiefer in der Kette auswirken.
+Angreifer können so Werte in einer Methode generieren, die dann Fehler in einer anderen Methode verursachen.
+Coupling Corruption Propagation (CCP) bestimmt die Anzahl der Methoden, 
+die durch einen Fehler in einer Methode beeinflusst werden können.
+Hierfür wird die Anzahl der Kindmethoden gezählt, mit die einem Parameter aufgerufen werden, 
+welcher auf einem Parameter der Originalmethode beruht.
+Mit einer geringeren Kopplung ist auch der CCP geringer.
+Kopplung ist häufig unumgänglich, Methoden mit einer hohen Kopplung sollten daher ausführlich getestet werden.
+% Villeicht beispiel?
 
 \paragraph{Critical Element Ratio (CER)}
+
+%Hier weiter
 
 \subsubsection{Security Metrics for Software Systems~\cite{Wang_Wang_Guo_Xia_2009}}
 
