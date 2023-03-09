@@ -675,6 +675,56 @@ Abschließend wird bewertet, inwieweit die Sammlung der Metriken alle Subcharakt
 
 \subsubsection{Security Metrics and Software Development Progression~\cite{Jain2014SecurityMA}}
 
+In ihrem Artikel Security Metrics and Software Development Progression beschreiben die Autoren Smirity Jain und Maya Ingle eine Sammlung von Metriken, 
+welche die Sicherheit von Software über den gesamten Entwicklungsprozesses hinweg messen.
+Mit diesen Metriken ist es möglich im nachhinein die Effektivität der sechs Phasen des Entwicklungsprozesses in Hinblick auf die Sicherheit zu messen.
+Im folgenden wird eine Auswahl der wichtigsten Metriken für die einzelnen Phasen vorgestellt.
+
+\paragraph{Phase 1: Anforderungsanalyse}
+
+Diese Phase konzentriert sich auf das Sammeln von Anforderungen.
+Smirity und Ingle beschreiben hier vier Metriken für die Sicherheit.
+\begin{itemize}
+  \item \textbf{Number of Security Requirements Gathered (NSRG)}: Anzahl der Sicherheitsanforderungen die in dieser Phase erfasst wurden.
+  \item \textbf{Security Requirements Recorded Deviations (SRRD)}: Anzahl der Abweichungen von den zuvor definierten Sicherheitsanforderungen in den Anforderungsspezifikationen.
+  \item \textbf{Security Requirements stage Security Errors (SRSE)}: Anzahl der Sicherheitsfehler, welche aus fehlerhaften Sicherheitsanforderungen resultieren.
+  \item \textbf{Security Requirements Gathering Indicators (SRI)}: Misst den Einfluss der Analysephase auf die Anzahl der Sicherheitslücken. 
+\end{itemize}
+Für die Auswertung dieser Metriken schlagen die Autoren vor, dass diese Metriken mit der Methode der kleinsten Quadrate zusammengefasst werden.
+Dabei werden die Metriken SRRD, SRSE und SRI als abhängig definiert, während NSRG als unabhängig betrachtet wird.
+Das Resultat dieser Rechnung ist die Funktion \alpha, welche die Effektivität dieser Phase in Bezug auf die Sicherheit misst.
+Alpha wird mit der Formel \ref{eq:alpha} berechnet, wobei Y die Summe der Werte der Metriken SRRD, SRSE und SRI ist.
+\alpha ist im Interval von -1 bis 1 Aussagekräftig, ein größerer Wert bedeutet eine bessere Effektivität.
+Ein wert von -1 bedeutet das Sicherheit in der Phase nicht berücksichtigt wurde 
+und ein Wert größer als 1 bedeutet das die Effektivität nicht bewertet werden kann.
+\begin{equation} \label{eq:alpha}
+  \alpha = \frac{ \left( 5,2421 - Y \right) }{ NSRG }
+\end{equation}
+
+\paragraph{Phase 2: Design}
+
+In dieser Phase werden die Anforderungen in ein Design überführt. 
+Hier ist die Umsetzung von nicht-funktionalen Anforderungen, wie Fehlerbehandlung, Fehlermeldungen und Autorisierung wichtig.
+Die Autoren definieren für diese Phase drei Metriken.
+\begin{itemize}
+  \item \textbf{Security Requirements Statistics (SRs)}: Prozentsatz der Sicherheitsanforderungen, welche in der Designphase bedacht wurden.
+  \item \textbf{Design Tools und Test Effectiveness (DTTE)}: Misst den Anteil von Analysetools (z.B. Threat Analysis und Attack Patterns) und Testing an den Sicherheitsrelevanten Designaspekten. 
+  \item \textbf{Number of Design stage Security Errors (NDSE)}: Misst die Anzahl der Sicherheitsfehler, welche aus dem Softwaredesign resultieren. 
+\end{itemize}
+Für die Auswertung dieser Metriken multipizieren die Autoren die Metriken DTTE und NDSE, das Ergebnis ist \beta. 
+Da DTTE den Anzeil von "Tools" und Tests an dem resultierenden Design misst und NSDE die Fehler welche aus dieser Phase entstehen zählt, 
+beschreibt \beta die Effektivität der Designphase in Bezug auf die Sicherheit.
+\beta wird mit der Formel \ref{eq:beta} berechnet und ist immer größer gleich 0. 
+Der \beta-Wert sollte zwischen 0 und 1 liegen, ein größerer Wert bedeutet eine schlechtere Effektivität.
+Ein \beta-Wert von 0 impliziert, dass das Testing sehr Effektiv ist und es keine Fehler in der Designphase gibt.
+\begin{equation} \label{eq:beta}
+  \beta = NDSE * DTTE
+\end{equation}
+
+\paragraph{Phase 3: Implementierung}
+
+#HIER WEITER
+
 \subsubsection{Security Metrics for Source Code Structures~\cite{Chowdhury_Chan_Zulkernine_2008}}
 
 \subsubsection{Security Metrics for Software Systems~\cite{Wang_Wang_Guo_Xia_2009}}
