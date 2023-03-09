@@ -677,12 +677,12 @@ Abschließend wird bewertet, inwieweit die Sammlung der Metriken alle Subcharakt
 
 In ihrem Artikel Security Metrics and Software Development Progression beschreiben die Autoren Smirity Jain und Maya Ingle eine Sammlung von Metriken, 
 welche die Sicherheit von Software über den gesamten Entwicklungsprozesses hinweg messen.
-Mit diesen Metriken ist es möglich im nachhinein die Effektivität der sechs Phasen des Entwicklungsprozesses in Hinblick auf die Sicherheit zu messen.
-Im folgenden wird eine Auswahl der wichtigsten Metriken für die einzelnen Phasen vorgestellt.
+Mit diesen Metriken ist es möglich im nachhinein die Effektivität der fünf Phasen des Entwicklungsprozesses in Hinblick auf die Sicherheit zu messen.
+Im folgenden wird eine Auswahl der wichtigsten Metriken für die Phasen vorgestellt.
 
 \paragraph{Phase 1: Anforderungsanalyse}
 
-Diese Phase konzentriert sich auf das Sammeln von Anforderungen.
+Diese Phase konzentriert sich auf das Sammeln von (Sicherheits-) Anforderungen.
 Smirity und Ingle beschreiben hier vier Metriken für die Sicherheit.
 \begin{itemize}
   \item \textbf{Number of Security Requirements Gathered (NSRG)}: Anzahl der Sicherheitsanforderungen die in dieser Phase erfasst wurden.
@@ -712,7 +712,7 @@ Die Autoren definieren für diese Phase drei Metriken.
   \item \textbf{Number of Design stage Security Errors (NDSE)}: Misst die Anzahl der Sicherheitsfehler, welche aus dem Softwaredesign resultieren. 
 \end{itemize}
 Für die Auswertung dieser Metriken multipizieren die Autoren die Metriken DTTE und NDSE, das Ergebnis ist \beta. 
-Da DTTE den Anzeil von "Tools" und Tests an dem resultierenden Design misst und NSDE die Fehler welche aus dieser Phase entstehen zählt, 
+Da DTTE den Anzeil von Tools und Tests an dem resultierenden Design misst und NSDE die Fehler welche aus dieser Phase entstehen zählt, 
 beschreibt \beta die Effektivität der Designphase in Bezug auf die Sicherheit.
 \beta wird mit der Formel \ref{eq:beta} berechnet und ist immer größer gleich 0. 
 Der \beta-Wert sollte zwischen 0 und 1 liegen, ein größerer Wert bedeutet eine schlechtere Effektivität.
@@ -723,9 +723,43 @@ Ein \beta-Wert von 0 impliziert, dass das Testing sehr Effektiv ist und es keine
 
 \paragraph{Phase 3: Implementierung}
 
-#HIER WEITER
+In dieser Phase wird Sicherheit durch Input- und Outputvalidierung und durch die Verwendung von guten Programmierstandards erreicht.
+Die Autoren beschreiben hier drei Metriken um die Sicherheitsanstrengungen der Entwickler zu messen.
+\begin{itemize}
+  \item \textbf{Percent of Secure Coding Aspects (PSCA)}: Misst das Verhälltnis der Sicherheitsrelevanten Coding-Aspekte in der Entwicklungsphase im Vergleich zu den Designaspekten (aus der Designphase).
+  \item \textbf{Percent use of Coding Standards (PCS)}: Misst den Anteil an Coding-Standards für sichere Entwicklung, die verwendet wurden. Sie kann als ein Annährung für NSE dienen.
+  \item \textbf{Number of Security Errors (NSE)}: Misst die Anzahl an Programmierfehlern, welche im Programm vorhanden sind oder durch externe Librarys eingebracht wurden.
+\end{itemize}
+Für die Auswertung verwenden die Autoren wird hier wieder die Methode der kleinsten Quadrate verwendet.
+Der resultierende Wert \gamma (\ref{eq:gamma}) beschreibt die Effektivität der Implementierungsphase in Bezug auf die Sicherheit.
+Ein negativer \gamma Wert deutet auf eine hohe Fehleranzahl hin und ein Wert nahe 0 deutet auf eine gute Effektivität der Phase hin.
+\begin{equation} \label{eq:gamma}
+  \gamma = \frac{ 8,4022 - NSE }{ PSCA + PCS }
+\end{equation}
+
+\paragraph{Phase 4: Testen}
+
+In dieser Phase wird die Software auf Sicherheitslücken getestet.
+Die wichtigsten Metriken sind folgende.
+\begin{itemize}
+  \item \textbf{Process Effectiveness (PE)}: Beschreibt das Verhältnis zwischen der Anzahl der entdeckten Sicherheitslücken und der Anzahl der Module, die Sicherheitstest unterzogen wurden.
+  \item \textbf{Security Testing Ratio (STR)}: Misst den Anteil der Module, die Sicherheitstests unterzogen wurden.
+\end{itemize}
+
+\paragraph{Phase 5: Betrieb und Wartung}
+
+In dieser Phase werden Risikobewertungen und Sicherheitsanalysen durchgeführt um bei Patches eingebrachte Sicherheitsfehler zu finden.
+Außerdem findet hier das Logging, Monitoring und die Analyse von Sicherheitsereignissen statt.
+Die Autoren beschreiben hier X Metriken.
+\begin{itemize}
+  \item \textbf{Mean Time to Complete Security Changes (MTCSC)}: Schätzt die durchschnittliche Zeit, die es braucht um einen Sicherheitsfehler zu beheben. 
+  \item \textbf{Rate of Vulnerability Assessments (RVA)}: Misst die Anzahl der Sicherheitsanalysen pro Quartal.
+  \item \textbf{Ratio of Changes due to security considerations (RSC)}: Misst den Anteil der Änderungen am System auf Grund neuer Sicherheitsanforderungen im Vergleich zur gesammtheit der Systemänderungen.
+\end{itemize}
 
 \subsubsection{Security Metrics for Source Code Structures~\cite{Chowdhury_Chan_Zulkernine_2008}}
+
+# Hier weiter
 
 \subsubsection{Security Metrics for Software Systems~\cite{Wang_Wang_Guo_Xia_2009}}
 
