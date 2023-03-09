@@ -767,7 +767,22 @@ Die Metriken sind folgende.
 
 \paragraph{Stall Ratio (SR)}
 
+Die Stall Ratio misst, welcher Anteil des Programmcodes nicht benötigt wird, um dessen definiertes Ziel zu erreichen.
+Gerade in einer Schleife verzögern sogenannte Stall Statements die Ausführung des Programms und können somit einen Angriff erleichtern.
+Die Stall Ratio wird mit der Formel \ref{eq:sr} berechnet.
+\begin{equation} \label{eq:sr}
+  \text{Stall Ratio} = \frac{ \text{Nicht-zielführende Zeilen in einer Schleife} }{ \text{Gesamtanzahl der Zeilen in der Schleife} }
+\end{equation}
+
+# Villeicht ein Beispiel?
+Nicht alle Stall Statements sind schlecht, gerade das Schreiben von Logs, Fehlermeldungen, etc. sind notwendig.
+Dennoch sollte auch die Anzahl sollten auch diese Stall Statements nicht allzu oft vorkommen.
+Angreifer nutzen häufig Denial of Service Angriffe um die Verfügbarkeit von Systemen zu beeinträchtigen.
+Eine hohe Anzahl an Stall Statements kann die Auswirkungen eines solchen Angriffs verstärken.
+
 \paragraph{Coupling Corruption Propagation (CCP)}
+
+# Hier weiter
 
 \paragraph{Critical Element Ratio (CER)}
 
