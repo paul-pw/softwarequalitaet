@@ -797,9 +797,24 @@ Kopplung ist häufig unumgänglich, Methoden mit einer hohen Kopplung sollten da
 
 \paragraph{Critical Element Ratio (CER)}
 
-%Hier weiter
+Bei objektorientierten Programmiersprachen gibt es Objekte, 
+die während der Laufzeit des Programms initialisiert werden. 
+Für diesen Prozess ist es aber nicht unbedingt nötig alle Aspekte eines Objekts zu initialisieren.
+Andere Aspekte des Objekts sind elementar für das Funktionieren des Programms, 
+wenn sie verändert werden kann das Programm instabil werden und somit ein Sicherheitsrisiko darstellen.
+Es gilt, je höher die Anzahl dieser kritischen Elemente in einer Klasse, desto höher ist das Sicherheitsrisiko.
+Um dieses Risiko zu messen, wird der Anteil der kritischen Datenelemente in einem Objekt berechnet (CER).
+Wichtig ist hierbei, dass nur datenelemente Berücksichtigt werden, 
+die während der Laufzeit des Programms durch einen Benutzer verändert werden können.
+Die Formel für die Berechnung des CER ist in \ref{eq:cer} angegeben.
+\begin{equation} \label{eq:cer}
+  \text{Critical Element Ratio} = \frac{ \text{Kritische Datenelemente in einem Objekt} }{ \text{Gesamtanzahl der Elemente in einem Objekt} }
+\end{equation}
+% Villeicht beispiel?
 
 \subsubsection{Security Metrics for Software Systems~\cite{Wang_Wang_Guo_Xia_2009}}
+
+% HIER WEITER
 
 \subsubsection{Kombination der Ansätze und Bewertung der Metriken}
 
