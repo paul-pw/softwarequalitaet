@@ -698,6 +698,7 @@ miteinander Kombiniert.
 Ziel ist es so eine Sammlung an Metriken zu erhalten, 
 welche eine Bewertung der Sicherheit einer Software über den Entwicklungsprozess hinweg ermöglichen. 
 Abschließend wird bewertet, inwieweit die Sammlung der Metriken alle Subcharakteristika für Sicherheit im \ac{iso} 25010 Qualitätsmodell abdeckt.
+Zusätzlich wird die Möglichkeit zur Automatisierung des Bewertungsprozesses betrachtet.
 
 \subsubsection{Security Metrics and Software Development Progression~\cite{Jain2014SecurityMA}}
 
@@ -966,11 +967,6 @@ Die Tiefe der Analyse ist macht diese Metriken sehr effektiv für die Analyse de
 Das zweite Paper Fokussiert sich auf die Bewertung von Softwaresystemen auf Basis der Anfälligkeit für bekannte Schwachstellen.
 Da die Art der Schwachstellen vielseitig ist können so abhängig von den betrachteten Systemen und Komponenten auch alle Charakteristika der \ac{iso} 25010 abgedeckt werden.
 
-Zusammengenommen bieten die Metriken der Paper eine gute Abdeckung der Charakteristika der \ac{iso} 25010 und 
-ermöglicen die Bewertung sowohl auf der tiefen Quellcode-Ebene, als auch mit Hinblick auf das System als ganzes.
-Zusätzlich wird auch der Prozess der Sofwareentwicklung berücksichtigt, 
-der eine elementare Rolle in der Entwicklung von guter, sicherer Software spielt. 
-
 \section{Ausblick}
 
 % TODO kritische Auseinandersetzung mit dieser Metrik.
@@ -998,7 +994,16 @@ In einer weiteren Arbeit ist es außerdem Denkbar weitere Metriken zu finden,
 mit denen die übrigen Qualitätscharakteristika 
 einfach quantifiziert werden können.
 
-
+Der Bereich Sicherheit ist sehr umfangreich und es gibt viele verschiedene Ansätze und Metriken.
+Zusammengenommen bieten die behandelten Metriken eine gute Abdeckung der Charakteristika der \ac{iso} 25010 und 
+ermöglicen die Bewertung sowohl auf der tiefen Quellcode-Ebene, als auch mit Hinblick auf das System als ganzes.
+Zusätzlich wird auch der Prozess der Sofwareentwicklung berücksichtigt, 
+der eine elementare Rolle in der Entwicklung von guter, sicherer Software spielt. 
+Die automatisierte Unsetzung aller Ansätze ist schwer möglich, 
+da gerade im Softwareentwicklungsprozess viele verschiedene Personen und Teams involviert sind.
+Dies macht die Analyse sehr komplex.
+Dennoch lassen sich die Metriken zur Sicherheit auf Quellcode-Ebene und auf CVE-Basis sehr gut automatisieren.
+Eine kombination der beiden Ansätze ist ebenfalls möglich, indem man den Sourcecode und die Abhängigkeiten automatisch scannt. 
 % * Welche Punkte wurden in der Arbeit abgehandelt
 % * Welche stellen fehlen in dieser Arbeit Noch
 %   * Die anderen Qualitätscharakteristika
