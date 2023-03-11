@@ -879,10 +879,54 @@ So kann eine höhere Automatisierung erreicht werden.
 
 \subsubsection{Kombination der Ansätze und Bewertung der Metriken}
 
-In Tabelle X und Y ist aufgeschlüsselt welche Charakteristika der ISO 25010 durch die Metriken abgedeckt werden.
+\begin{center}
+  \begin{table}
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{NiceTabular}{|l|c|c|c|c|c|c|}
+      \hline
+      & \rotate \alpha-Wert
+      & \rotate \beta-Wert
+      & \rotate \gamma-Wert
+      & \rotate PE und STR
+      & \rotate MTCSC
+      & \rotate RSC\\\hline
+      Vertraulichkeit         &x&x& &x&x&x\\\hline
+      Integrität              &x& &x&x&x&x\\\hline
+      Unbestreitbarkeit       &x& &x& & & \\\hline
+      Verantwortlichkeit      &x&x&x& & & \\\hline
+      Authentizität           &x&x& & & & \\\hline
+    \end{NiceTabular}
+    \caption{Zugehörigkeit der Metriken zu den Sicherheit-Subcharakteristika}
+    \label{table:security_metrics_1}
+  \end{table}
+\end{center}
+
+\begin{center}
+  \begin{table}
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{NiceTabular}{|l|c|c|c|c|}
+      \hline
+      & \rotate SR
+      & \rotate CCP
+      & \rotate CER
+      & \rotate CVE-Metrik\\\hline
+      Vertraulichkeit         & & & &x\\\hline
+      Integrität              & & & &x\\\hline
+      Verantwortlichkeit      &x&x&x&x\\\hline
+      Modifizierbarkeit       & & & &x\\\hline
+      Authentizität           & & & &x\\\hline
+    \end{NiceTabular}
+    \caption{Zugehörigkeit der Metriken zu den Sicherheit-Subcharakteristika}
+    \label{table:security_metrics_2}
+  \end{table}
+\end{center}
+
+In Tabelle \ref{table:security_metrics_1} und \ref{table:security_metrics_2} ist aufgeschlüsselt welche Charakteristika der ISO 25010 durch die Metriken abgedeckt werden.
 Da in der Analysephase die Grundlagen für alle weiteren Phasen der Softwareentwicklung gelegt werden, 
 deckt der \alpha-Wert alle Charakteristika der ISO 25010 ab.
-Tabelle X gibt einen Überblick über die Abdeckung der Metriken des ersten Artikels~\cite{Jain2014SecurityMA}
+Tabelle \ref{table:security_metrics_1} gibt einen Überblick über die Abdeckung der Metriken des ersten Artikels~\cite{Jain2014SecurityMA}
 Der \beta-Wert gibt eine Aussage über die Effektivität der Designphase, 
 der Fokus liegt daher auf der Identifikation, Authorisierung und weiteren nicht-funktionalen Anforderungen.
 Der \gamma-Wert gibt eine Aussage über die Effektivität der Implementierungsphase, daher ist er wichtig für die Integrität, Unbestreitbarkeit und Verantwortlichkeit.
@@ -891,7 +935,7 @@ die Effektivität darin Fehler und Sicherheitslücken festzustellen.
 Daher liegt der Fokus hier auf Vertraulichkeit und Integrität.
 Dasselbe gilt auch für die Metriken der Betriebs- und Wartungsphase.
 
-Tabelle Y gibt einen Überblick über die Abdeckung der Metriken der anderen beiden Paper~\cite{Chowdhury_Chan_Zulkernine_2008}~\cite{Wang_Wang_Guo_Xia_2009}.
+Tabelle \ref{table:security_metrics_2} gibt einen Überblick über die Abdeckung der Metriken der anderen beiden Paper~\cite{Chowdhury_Chan_Zulkernine_2008}~\cite{Wang_Wang_Guo_Xia_2009}.
 Da das erste Paper sich auf die Sicherheit auf der Quellcode-Ebenen konzentriert, deckten die Metriken nur das Charakteristika der Integrität ab.
 Die Tiefe der Analyse ist macht diese Metriken sehr effektiv für die Analyse des Quellcodes.
 Das zweite Paper Fokussiert sich auf die Bewertung von Softwaresystemen auf Basis der Anfälligkeit für bekannte Schwachstellen.
