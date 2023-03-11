@@ -862,7 +862,7 @@ schlagen die Forscher vor die Anzahl der CVEs einer Schwachstelle (K) mit dem Ze
 Abschließend wird die durchschnittliche CVSS Bewertung aller Schwachstellen mit dem Missbrauchsrisiko verrechnet (siehe \ref{eq:cve_risk2}).
 Mit dieser Formel lässt sich die Sicherheit der Software (s) berechnen.
 \begin{equation} \label{eq:cve_risk2}
-  SM \left( s \right) = \Sum{ n=1 }{ m }{ \left[ \left( \frac{ R_{ n } }{ \Sum{ i=1 }{ m }{ R_{ i } } } \right) \times W_{ n } \right] }
+  SM \left( s \right) = \sum_{ n=1 }^{ m }{ \left[ \left( \frac{ R_{ n } }{ \sum_{ i=1 }^{ m }{ R_{ i } } } \right) \times W_{ n } \right] }
 \end{equation}
 
 \paragraph{Verbesserungsansätze}
