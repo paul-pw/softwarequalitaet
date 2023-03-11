@@ -842,7 +842,6 @@ Redhat schreibt dazu auf ihrer Webseite \cite{Redhat_CVE}:
 \begin{quote}
   \textit{
     CVE, kurz für Common Vulnerabilities and Exposures (Häufige Schwachstellen und Risiken), ist eine Liste mit öffentlichen Sicherheitsschwachstellen in Computersystemen. Mit CVE ist eine bestimmte Schwachstelle gemeint, der eine CVE-Nummer zugewiesen ist.
-    
     In Sicherheitshinweisen von Anbietern und Forschenden wird fast immer mindestens eine CVE-Nummer erwähnt. Mithilfe von CVEs können IT-Fachleute solche Schwachstellen leichter priorisieren und beheben, um Computersysteme sicherer zu machen.
   } 
 \end{quote}
@@ -851,10 +850,36 @@ verknüpfen diese mit den entsprechenden Produkten und der CVSS Bewertung.
 
 \paragraph{Software Sicherheits Metrik}
 
-% Weiter hier
+Für das Erstellen der Metrik haben die Forscher nun vorgeschlagen, 
+die wichtigsten Schwachstelle einer Software zu identifizieren und CVE einträge zu diesen zu finden.
+Für diese einzelne Schwachstellen wird dann die durchschnittliche CVSS Bewertung aller CVEs berechnet.
+So kann die Schwere der Schwachstellen gemessen werden.
+Um das Risiko (R) für ein Ausnutzen dieser Schwachstelle in die Bewertung einfließen zu lassen, 
+schlagen die Forscher vor die Anzahl der CVEs einer Schwachstelle (K) mit dem Zeitraum (in Monaten), in dem die Schwachstelle in dem System existierte (M) zu verrechnen (siehe \ref{eq:cve_risk}).
+\begin{equation} \label{eq:cve_risk}
+  R = \frac{ K }{ M }
+\end{equation}
+Abschließend wird die durchschnittliche CVSS Bewertung aller Schwachstellen mit dem Missbrauchsrisiko verrechnet (siehe \ref{eq:cve_risk2}).
+Mit dieser Formel lässt sich die Sicherheit der Software (s) berechnen.
+\begin{equation} \label{eq:cve_risk2}
+  SM \left( s \right) = \Sum{ n=1 }{ m }{ \left[ \left( \frac{ R_{ n } }{ \Sum{ i=1 }{ m }{ R_{ i } } } \right) \times W_{ n } \right] }
+\end{equation}
+
+\paragraph{Verbesserungsansätze}
+In diesem Paper wenden die Autoren viel Zeit auf um Schwachstellen in dem System zu identifizieren und zu Kathegorisieren.
+Dieser händische Prozess lässt sich durch die Verwendung der National Vulnerability Database (NVD) deutlich vereinfachen.
+Hier werden Softwaresysteme und Packete aufgelistet, welche Schwachstellen aufweisen und 
+es wird Angemerkt ab welcher Version diese Schwachstelle behoben wurde.
+Zur vereinfachung dieses Prozesses kann es Hilfreich sein einen Scanner zu verwenden, 
+welcher die verwendete Software und Packete identifiziert und 
+die Schwachstellen in der NVD Datenbank mit den identifizierten Packeten vergleicht.
+Die gefundenen Schwachstellen können zusammen mit dem Zeitraum, 
+in dem der Scanner diese im System gefunden hat, verwendet werden um die Metrik zu berechnen.
+So kann eine höhere Automatisierung erreicht werden.
 
 \subsubsection{Kombination der Ansätze und Bewertung der Metriken}
 
+% Hier weiter
 
 \section{Ausblick}
 
