@@ -822,7 +822,23 @@ Dabei wird auch die Schwere der CVEs nach CVSS, sowie die Wahrscheinlichkeit der
 
 \paragraph{Common Vulnerabilitie Scoring System (CVSS)}
 
+Das CVSS ist ein System zur Bewertung der Schwere und 
+des damit einhergehenden Risikos einzelner Sicherheitslücken auf ein Computer-Umgbebungen.
+CVSS wurde von der US-Amerikanischen Organisation National Institute of Standards and Technology (NIST) entwickelt.
+Die Bewertung ist in  3 Kategorien unterteilt, die jeweils eine eigene Skala haben.
+Die Basismetrik misst die grundlegenden Eigenschaften einer Schwachstelle und ist Zeit- und Umgebungsunabhängig.
+Die zeitliche Metrik beschreibt die Schwere einer Schwachstelle in Abhängigkeit von der Zeit.
+Die Umgebungs-Metrik beschreibt die Schwere einer Schwachstelle in Abhängigkeit der Umgebung des Benutzers.
+Für die Bewertung werden mehrere Fragen zu den Metriken mit einem Wert zwischen 0 und 10 beantwortet.
+Der durchschnitt der Werte aller Fragen einer Metrik ergibt den Wert für dieser Metrik (0 - 10).
+Für die Zeitliche Bewertung wird die Bewertung der Basis- und der Zeitmetrik addiert.
+Für die Umgebungs-Bewertung werden alle drei Metriken miteinander verrechnet.
+
 \paragraph{Common Vulnerabilities and Exposures (CVE)}
+
+
+
+\paragraph{Software Sicherheits Metrik}
 
 \subsubsection{Kombination der Ansätze und Bewertung der Metriken}
 
