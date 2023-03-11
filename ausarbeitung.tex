@@ -693,7 +693,7 @@ Smirity und Ingle beschreiben hier vier Metriken für die Sicherheit.
 Für die Auswertung dieser Metriken schlagen die Autoren vor, dass diese Metriken mit der Methode der kleinsten Quadrate zusammengefasst werden.
 Dabei werden die Metriken SRRD, SRSE und SRI als abhängig definiert, während NSRG als unabhängig betrachtet wird.
 Das Resultat dieser Rechnung ist die Funktion \alpha, welche die Effektivität dieser Phase in Bezug auf die Sicherheit misst.
-Alpha wird mit der Formel \ref{eq:alpha} berechnet, wobei Y die Summe der Werte der Metriken SRRD, SRSE und SRI ist.
+Alpha wird mit der Formel~\ref{eq:alpha} berechnet, wobei Y die Summe der Werte der Metriken SRRD, SRSE und SRI ist.
 \alpha ist im Interval von -1 bis 1 Aussagekräftig, ein größerer Wert bedeutet eine bessere Effektivität.
 Ein wert von -1 bedeutet das Sicherheit in der Phase nicht berücksichtigt wurde 
 und ein Wert größer als 1 bedeutet das die Effektivität nicht bewertet werden kann.
@@ -714,7 +714,7 @@ Die Autoren definieren für diese Phase drei Metriken.
 Für die Auswertung dieser Metriken multipizieren die Autoren die Metriken DTTE und NDSE, das Ergebnis ist \beta. 
 Da DTTE den Anzeil von Tools und Tests an dem resultierenden Design misst und NSDE die Fehler welche aus dieser Phase entstehen zählt, 
 beschreibt \beta die Effektivität der Designphase in Bezug auf die Sicherheit.
-\beta wird mit der Formel \ref{eq:beta} berechnet und ist immer größer gleich 0. 
+\beta wird mit der Formel~\ref{eq:beta} berechnet und ist immer größer gleich 0. 
 Der \beta-Wert sollte zwischen 0 und 1 liegen, ein größerer Wert bedeutet eine schlechtere Effektivität.
 Ein \beta-Wert von 0 impliziert, dass das Testing sehr Effektiv ist und es keine Fehler in der Designphase gibt.
 \begin{equation} \label{eq:beta}
@@ -731,7 +731,7 @@ Die Autoren beschreiben hier drei Metriken um die Sicherheitsanstrengungen der E
   \item \textbf{Number of Security Errors (NSE)}: Misst die Anzahl an Programmierfehlern, welche im Programm vorhanden sind oder durch externe Librarys eingebracht wurden.
 \end{itemize}
 Für die Auswertung verwenden die Autoren wird hier wieder die Methode der kleinsten Quadrate verwendet.
-Der resultierende Wert \gamma (\ref{eq:gamma}) beschreibt die Effektivität der Implementierungsphase in Bezug auf die Sicherheit.
+Der resultierende Wert \gamma (Gleichung~\ref{eq:gamma}) beschreibt die Effektivität der Implementierungsphase in Bezug auf die Sicherheit.
 Ein negativer \gamma Wert deutet auf eine hohe Fehleranzahl hin und ein Wert nahe 0 deutet auf eine gute Effektivität der Phase hin.
 \begin{equation} \label{eq:gamma}
   \gamma = \frac{ 8,4022 - NSE }{ PSCA + PCS }
@@ -769,7 +769,7 @@ Die Metriken sind folgende.
 
 Die Stall Ratio misst, welcher Anteil des Programmcodes nicht benötigt wird, um dessen definiertes Ziel zu erreichen.
 Gerade in einer Schleife verzögern sogenannte Stall Statements die Ausführung des Programms und können somit einen Angriff erleichtern.
-Die Stall Ratio wird mit der Formel \ref{eq:sr} berechnet.
+Die Stall Ratio wird mit der Formel~\ref{eq:sr} berechnet.
 \begin{equation} \label{eq:sr}
   \text{Stall Ratio} = \frac{ \text{Nicht-zielführende Zeilen in einer Schleife} }{ \text{Gesamtanzahl der Zeilen in der Schleife} }
 \end{equation}
@@ -806,7 +806,7 @@ Es gilt, je höher die Anzahl dieser kritischen Elemente in einer Klasse, desto 
 Um dieses Risiko zu messen, wird der Anteil der kritischen Datenelemente in einem Objekt berechnet (CER).
 Wichtig ist hierbei, dass nur datenelemente Berücksichtigt werden, 
 die während der Laufzeit des Programms durch einen Benutzer verändert werden können.
-Die Formel für die Berechnung des CER ist in \ref{eq:cer} angegeben.
+Die Formel für die Berechnung des CER ist in der Formel~\ref{eq:cer} angegeben.
 \begin{equation} \label{eq:cer}
   \text{Critical Element Ratio} = \frac{ \text{Kritische Datenelemente in einem Objekt} }{ \text{Gesamtanzahl der Elemente in einem Objekt} }
 \end{equation}
@@ -855,11 +855,11 @@ die wichtigsten Schwachstelle einer Software zu identifizieren und CVE einträge
 Für diese einzelne Schwachstellen wird dann die durchschnittliche CVSS Bewertung aller CVEs berechnet.
 So kann die Schwere der Schwachstellen gemessen werden.
 Um das Risiko (R) für ein Ausnutzen dieser Schwachstelle in die Bewertung einfließen zu lassen, 
-schlagen die Forscher vor die Anzahl der CVEs einer Schwachstelle (K) mit dem Zeitraum (in Monaten), in dem die Schwachstelle in dem System existierte (M) zu verrechnen (siehe \ref{eq:cve_risk}).
+schlagen die Forscher vor die Anzahl der CVEs einer Schwachstelle (K) mit dem Zeitraum (in Monaten), in dem die Schwachstelle in dem System existierte (M) zu verrechnen (siehe Gleichung~\ref{eq:cve_risk}).
 \begin{equation} \label{eq:cve_risk}
   R = \frac{ K }{ M }
 \end{equation}
-Abschließend wird die durchschnittliche CVSS Bewertung aller Schwachstellen mit dem Missbrauchsrisiko verrechnet (siehe \ref{eq:cve_risk2}).
+Abschließend wird die durchschnittliche CVSS Bewertung aller Schwachstellen mit dem Missbrauchsrisiko verrechnet (siehe Gleichung~\ref{eq:cve_risk2}).
 Mit dieser Formel lässt sich die Sicherheit der Software (s) berechnen.
 \begin{equation} \label{eq:cve_risk2}
   SM \left( s \right) = \sum_{ n=1 }^{ m }{ \left[ \left( \frac{ R_{ n } }{ \sum_{ i=1 }^{ m }{ R_{ i } } } \right) \times W_{ n } \right] }
@@ -879,7 +879,28 @@ So kann eine höhere Automatisierung erreicht werden.
 
 \subsubsection{Kombination der Ansätze und Bewertung der Metriken}
 
-% Hier weiter
+In Tabelle X und Y ist aufgeschlüsselt welche Charakteristika der ISO 25010 durch die Metriken abgedeckt werden.
+Da in der Analysephase die Grundlagen für alle weiteren Phasen der Softwareentwicklung gelegt werden, 
+deckt der \alpha-Wert alle Charakteristika der ISO 25010 ab.
+Tabelle X gibt einen Überblick über die Abdeckung der Metriken des ersten Artikels~\cite{Jain2014SecurityMA}
+Der \beta-Wert gibt eine Aussage über die Effektivität der Designphase, 
+der Fokus liegt daher auf der Identifikation, Authorisierung und weiteren nicht-funktionalen Anforderungen.
+Der \gamma-Wert gibt eine Aussage über die Effektivität der Implementierungsphase, daher ist er wichtig für die Integrität, Unbestreitbarkeit und Verantwortlichkeit.
+Process Effectiveness und Security Testing Ratio ermöglichen die Bewertung der Testphase und 
+die Effektivität darin Fehler und Sicherheitslücken festzustellen. 
+Daher liegt der Fokus hier auf Vertraulichkeit und Integrität.
+Dasselbe gilt auch für die Metriken der Betriebs- und Wartungsphase.
+
+Tabelle Y gibt einen Überblick über die Abdeckung der Metriken der anderen beiden Paper~\cite{Chowdhury_Chan_Zulkernine_2008}~\cite{Wang_Wang_Guo_Xia_2009}.
+Da das erste Paper sich auf die Sicherheit auf der Quellcode-Ebenen konzentriert, deckten die Metriken nur das Charakteristika der Integrität ab.
+Die Tiefe der Analyse ist macht diese Metriken sehr effektiv für die Analyse des Quellcodes.
+Das zweite Paper Fokussiert sich auf die Bewertung von Softwaresystemen auf Basis der Anfälligkeit für bekannte Schwachstellen.
+Da die Art der Schwachstellen vielseitig ist können so abhängig von den betrachteten Systemen und Komponenten auch alle Charakteristika der ISO 25010 abgedeckt werden.
+
+Zusammengenommen bieten die Metriken der Paper eine gute Abdeckung der Charakteristika der ISO 25010 und 
+ermöglicen die Bewertung sowohl auf der tiefen Quellcode-Ebene, als auch mit Hinblick auf das System als ganzes.
+Zusätzlich wird auch der Prozess der Sofwareentwicklung berücksichtigt, 
+der eine elementare Rolle in der Entwicklung von guter, sicherer Software spielt. 
 
 \section{Ausblick}
 
