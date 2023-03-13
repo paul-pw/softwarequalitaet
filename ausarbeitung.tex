@@ -78,9 +78,33 @@
   pages/display = first
 }
 
+%Offizele Akronyme
 \DeclareAcronym{iso}{short=ISO, long=International Organization for Standardization}
 \DeclareAcronym{cicd}{short=CI/CD, long=Continuous Integration / Continuous Delivery}
+\DeclareAcronym{cve}{short=CVE, long=Common Vulnerabilities and Exposures}
+\DeclareAcronym{cvss}{short=CVSS, long=Common Vulnerabilitie Scoring System}
+\DeclareAcronym{nvd}{short=NVD, long=National Vulnerability Database}
+\DeclareAcronym{nist}{short=NIST, long=National Institute of Standards and Technology}
 
+%Eigene Akronyme
+\DeclareAcronym{nsrg}{short=NSRG, long=Number of Requirements Gathered}
+\DeclareAcronym{srrd}{short=SRRD, long=Security Requirements Recorded Deviations}
+\DeclareAcronym{srse}{short=SRSE, long=Security Requirements stage Security Errors}
+\DeclareAcronym{sri}{short=SRI, long=Security Requirements Gathering Indicators}
+\DeclareAcronym{srs}{short=SRs, long=Security Requirements Statistics}
+\DeclareAcronym{dtte}{short=DTTE, long=Design Tools und Test Effectiveness}
+\DeclareAcronym{ndse}{short=NDSE, long=Number of Design stage Security Errors}
+\DeclareAcronym{psca}{short=PSCA, long=Percent of Secure Coding Aspects}
+\DeclareAcronym{pcs}{short=PCS, long=Percent use of Coding Standards}
+\DeclareAcronym{nse}{short=NSE, long=Number of Security Errors}
+\DeclareAcronym{pe}{short=PE, long=Process Effectiveness}
+\DeclareAcronym{str}{short=STR, long=Security Testing Ratio}
+\DeclareAcronym{mtcsc}{short=MTCSC, long=Mean Time to Complete Security Changes}
+\DeclareAcronym{rva}{short=RVA, long=Rate of Vulnerabilitie Assessments}
+\DeclareAcronym{rsc}{short=RSC, long=Ratio of Changes due to security considerations}
+\DeclareAcronym{sr}{short=SR, long=Stall Ratio}
+\DeclareAcronym{ccp}{short=CCP, long=Coupling Corruption Propagation}
+\DeclareAcronym{cer}{short=CER, long=Critical Element Ratio}
 
 \newcommand{\reals}{\ensuremath{\mathbb{R}}}
 \newcommand{\natnums}{\ensuremath{\mathbb{N}}}
@@ -301,7 +325,7 @@ Auf die Sicherheit wird in Abschnitt~\ref{sec:sicherheit} weiter eingegangen.
 Der Grad der Wartbarkeit beschreibt die Effektivität und die Effizienz
 mit der ein Softwareprodukt oder System modifiziert werden kann.
 
-Auf die Wartbarkeit wird in Abschnitt~\ref{sec:wartbarket} weiter eingegangen.
+Auf die Wartbarkeit wird in Abschnitt~\ref{sec:wartbarkeit} weiter eingegangen.
 
 \paragraph{Portabilität}
 
@@ -407,7 +431,7 @@ bewiesen werden kann wird durch die Authentizität definiert~\cite{ISO25010}.
 Das Ziel ist es mit Sicherheit nachweisen zu können, das eine Entität auch die ist, die sie angibt zu sein~\cite{ISO27000}.
 
 \subsection{Wartbarkeit}
-\label{sec:wartbarket}
+\label{sec:wartbarkeit}
 
 Der Grad der Wartbarkeit ist nach \ac{iso},
 wie effektiv und effizient das Produkt oder System verändert werden kann~\cite{ISO25010}.
@@ -496,7 +520,6 @@ Zusätzlich zur Erstellung der Testkriterien und der Durchführung der Tests,
 spielt es auch eine Rolle wie gut objektive und messbare Tests erstellt werden können,
 die feststellen, ob ein bestimmtes Kriterium erfüllt wurde~\cite{IEEE24765}.
 
-
 \section{Software Metriken}
 
 Software Metriken sind quantitative Maße,
@@ -541,10 +564,287 @@ wenn die Regeln eingehalten werden.
 
 \subsection{Sicherheit}
 
-% TODO eine oder mehrere Metriken zu der gewählten Charakteristik vorstellen.
-% Hingehen und metriken aus quellen suchen und vorstellen
-% Metriken listen, die beliebt sind und mit den Kriterien oben verknüpfen, wie bei der Wartbarkeit!
+Sicherheit ist ein Feld, welches in der Informatik sehr weit gefasst ist und in den meisten Themenbereichen eine elementare Rolle spielt.
+Daher ist es nicht verwunderlich, dass es schwer ist allgemeine Metriken für das Messen der Sicherheit von Software zu erarbeiten.
+Es gibt einige Artikel und Konferenz Papiere, die unterschiedliche Ansätze für das definieren von Metriken verfolgen und es gibt einige 
+Metaanalysen, die die Ergebnisse dieser Arbeiten miteinander vergleichen. 
+Zusätzlich dazu wurden Standards definiert, 
+welche jedoch weit gefasst sind und eine unpräzise Definition für Sicherheits-Metriken liefern~\cite{MeFlado_Fernández-Medina_Piattini_2010}.
 
+Um einen konkreten Ansatz für die Bewertung der Sicherheit mittels Metriken zu finden werden 
+drei unterschiedliche Ansätze (vereinfacht) vorgestellt~\cite{Jain2014SecurityMA}~\cite{Chowdhury_Chan_Zulkernine_2008}~\cite{Wang_Wang_Guo_Xia_2009} und 
+miteinander Kombiniert.
+Ziel ist es so eine Sammlung an Metriken zu erhalten, 
+welche eine Bewertung der Sicherheit einer Software über den Entwicklungsprozess hinweg ermöglichen. 
+Abschließend wird bewertet, inwieweit die Sammlung der Metriken alle Subcharakteristika für Sicherheit im \ac{iso} 25010 Qualitätsmodell abdeckt.
+Zusätzlich wird die Möglichkeit zur Automatisierung des Bewertungsprozesses betrachtet.
+
+\subsubsection{Security Metrics and Software Development Progression~\cite{Jain2014SecurityMA}}
+
+In ihrem Artikel Security Metrics and Software Development Progression beschreiben die Autoren Smirity Jain und Maya Ingle eine Sammlung von Metriken, 
+welche die Sicherheit von Software über den gesamten Entwicklungsprozesses hinweg messen.
+Mit diesen Metriken ist es möglich im nachhinein die Effektivität der fünf Phasen des Entwicklungsprozesses in Hinblick auf die Sicherheit zu messen.
+Im folgenden wird eine Auswahl der wichtigsten Metriken für die Phasen vorgestellt.
+
+\paragraph{Phase 1: Anforderungsanalyse}
+
+Diese Phase konzentriert sich auf das Sammeln von (Sicherheits-) Anforderungen.
+Smirity und Ingle beschreiben hier vier Metriken für die Sicherheit.
+\begin{itemize}
+  \item \textbf{Number of Security Requirements Gathered \ac{nsrg}}: Anzahl der Sicherheitsanforderungen die in dieser Phase erfasst wurden.
+  \item \textbf{Security Requirements Recorded Deviations \ac{srrd}}: Anzahl der Abweichungen von den zuvor definierten Sicherheitsanforderungen in den Anforderungsspezifikationen.
+  \item \textbf{Security Requirements stage Security Errors \ac{srse}}: Anzahl der Sicherheitsfehler, welche aus fehlerhaften Sicherheitsanforderungen resultieren.
+  \item \textbf{Security Requirements Gathering Indicators \ac{sri}}: Misst den Einfluss der Analysephase auf die Anzahl der Sicherheitslücken. 
+\end{itemize}
+Für die Auswertung dieser Metriken schlagen die Autoren vor, dass diese Metriken mit der Methode der kleinsten Quadrate zusammengefasst werden.
+Dabei werden die Metriken \ac{srrd}, \ac{srse} und \ac{sri} als abhängig definiert, während \ac{nsrg} als unabhängig betrachtet wird.
+Das Resultat dieser Rechnung ist die Funktion \alpha, welche die Effektivität dieser Phase in Bezug auf die Sicherheit misst.
+Alpha wird mit der Formel~\ref{eq:alpha} berechnet, wobei Y die Summe der Werte der Metriken \ac{srrd}, \ac{srse} und \ac{sri} ist.
+\alpha ist im Interval von -1 bis 1 Aussagekräftig, ein größerer Wert bedeutet eine bessere Effektivität.
+Ein wert von -1 bedeutet das Sicherheit in der Phase nicht berücksichtigt wurde 
+und ein Wert größer als 1 bedeutet das die Effektivität nicht bewertet werden kann.
+\begin{equation} \label{eq:alpha}
+  \alpha = \frac{ \left( 5,2421 - Y \right) }{ NSRG }
+\end{equation}
+
+\paragraph{Phase 2: Design}
+
+In dieser Phase werden die Anforderungen in ein Design überführt. 
+Hier ist die Umsetzung von nicht-funktionalen Anforderungen, wie Fehlerbehandlung, Fehlermeldungen und Autorisierung wichtig.
+Die Autoren definieren für diese Phase drei Metriken.
+\begin{itemize}
+  \item \textbf{Security Requirements Statistics \ac{srs}}: Prozentsatz der Sicherheitsanforderungen, welche in der Designphase bedacht wurden.
+  \item \textbf{Design Tools und Test Effectiveness \ac{dtte}}: Misst den Anteil von Analysetools (z.B. Threat Analysis und Attack Patterns) und Testing an den Sicherheitsrelevanten Designaspekten. 
+  \item \textbf{Number of Design stage Security Errors \ac{ndse}}: Misst die Anzahl der Sicherheitsfehler, welche aus dem Softwaredesign resultieren. 
+\end{itemize}
+Für die Auswertung dieser Metriken multipizieren die Autoren die Metriken \ac{dtte} und \ac{ndse}, das Ergebnis ist \beta. 
+Da \ac{dtte} den Anzeil von Tools und Tests an dem resultierenden Design misst und \ac{ndse} die Fehler welche aus dieser Phase entstehen zählt, 
+beschreibt \beta die Effektivität der Designphase in Bezug auf die Sicherheit.
+\beta wird mit der Formel~\ref{eq:beta} berechnet und ist immer größer gleich 0. 
+Der \beta-Wert sollte zwischen 0 und 1 liegen, ein größerer Wert bedeutet eine schlechtere Effektivität.
+Ein \beta-Wert von 0 impliziert, dass das Testing sehr Effektiv ist und es keine Fehler in der Designphase gibt.
+\begin{equation} \label{eq:beta}
+  \beta = NDSE * DTTE
+\end{equation}
+
+\paragraph{Phase 3: Implementierung}
+
+In dieser Phase wird Sicherheit durch Input- und Outputvalidierung und durch die Verwendung von guten Programmierstandards erreicht.
+Die Autoren beschreiben hier drei Metriken um die Sicherheitsanstrengungen der Entwickler zu messen.
+\begin{itemize}
+  \item \textbf{Percent of Secure Coding Aspects \ac{psca}}: Misst das Verhälltnis der Sicherheitsrelevanten Coding-Aspekte in der Entwicklungsphase im Vergleich zu den Designaspekten (aus der Designphase).
+  \item \textbf{Percent use of Coding Standards \ac{pcs}}: Misst den Anteil an Coding-Standards für sichere Entwicklung, die verwendet wurden. Sie kann als ein Annährung für \ac{nse} dienen.
+  \item \textbf{Number of Security Errors \ac{nse}}: Misst die Anzahl an Programmierfehlern, welche im Programm vorhanden sind oder durch externe Librarys eingebracht wurden.
+\end{itemize}
+Für die Auswertung verwenden die Autoren wird hier wieder die Methode der kleinsten Quadrate verwendet.
+Der resultierende Wert \gamma (Gleichung~\ref{eq:gamma}) beschreibt die Effektivität der Implementierungsphase in Bezug auf die Sicherheit.
+Ein negativer \gamma Wert deutet auf eine hohe Fehleranzahl hin und ein Wert nahe 0 deutet auf eine gute Effektivität der Phase hin.
+\begin{equation} \label{eq:gamma}
+  \gamma = \frac{ 8,4022 - NSE }{ PSCA + PCS }
+\end{equation}
+
+\paragraph{Phase 4: Testen}
+
+In dieser Phase wird die Software auf Sicherheitslücken getestet.
+Die wichtigsten Metriken sind folgende.
+\begin{itemize}
+  \item \textbf{Process Effectiveness \ac{pe}}: Beschreibt das Verhältnis zwischen der Anzahl der entdeckten Sicherheitslücken und der Anzahl der Module, die Sicherheitstest unterzogen wurden.
+  \item \textbf{Security Testing Ratio \ac{str}}: Misst den Anteil der Module, die Sicherheitstests unterzogen wurden.
+\end{itemize}
+
+\paragraph{Phase 5: Betrieb und Wartung}
+
+In dieser Phase werden Risikobewertungen und Sicherheitsanalysen durchgeführt um bei Patches eingebrachte Sicherheitsfehler zu finden.
+Außerdem findet hier das Logging, Monitoring und die Analyse von Sicherheitsereignissen statt.
+Die Autoren beschreiben hier drei Metriken.
+\begin{itemize}
+  \item \textbf{Mean Time to Complete Security Changes \ac{mtcsc}}: Schätzt die durchschnittliche Zeit, die es braucht um einen Sicherheitsfehler zu beheben. 
+  \item \textbf{Rate of Vulnerability Assessments \ac{rva}}: Misst die Anzahl der Sicherheitsanalysen pro Quartal.
+  \item \textbf{Ratio of Changes due to security considerations \ac{rsc}}: Misst den Anteil der Änderungen am System auf Grund neuer Sicherheitsanforderungen im Vergleich zur gesammtheit der Systemänderungen.
+\end{itemize}
+
+\subsubsection{Security Metrics for Source Code Structures~\cite{Chowdhury_Chan_Zulkernine_2008}}
+
+In dem Paper Security Metrics for Source Code Structures werden drei Metriken vorgestellt, 
+welche das Messen der Sicherheit auf Quellcode-Ebene ermöglicen.
+Ziel ist es eine Bewertung der Code-Qualität durchzuführen und 
+festzustellen ob Fehler oder Unreinheiten vorhanden sind, die ein Angreifer ausnutzen könnte.
+Die Metriken sind folgende.
+
+\paragraph{Stall Ratio \ac{sr}}
+
+Die Stall Ratio misst, welcher Anteil des Programmcodes nicht benötigt wird, um dessen definiertes Ziel zu erreichen.
+Gerade in einer Schleife verzögern sogenannte Stall Statements die Ausführung des Programms und können somit einen Angriff erleichtern.
+Die Stall Ratio wird mit der Formel~\ref{eq:sr} berechnet.
+\begin{equation} \label{eq:sr}
+  \text{Stall Ratio} = \frac{ \text{Nicht-zielführende Zeilen in einer Schleife} }{ \text{Gesamtanzahl der Zeilen in der Schleife} }
+\end{equation}
+
+% Villeicht ein Beispiel?
+Nicht alle Stall Statements sind schlecht, gerade das Schreiben von Logs, Fehlermeldungen, etc. sind notwendig.
+Dennoch sollte auch die Anzahl sollten auch diese Stall Statements nicht allzu oft vorkommen.
+Angreifer nutzen häufig Denial of Service Angriffe um die Verfügbarkeit von Systemen zu beeinträchtigen.
+Eine hohe Anzahl an Stall Statements kann die Auswirkungen eines solchen Angriffs verstärken.
+
+\paragraph{Coupling Corruption Propagation \ac{ccp}}
+
+Kopplung von Methoden meint, dass zwei oder mehr Methoden voneinander abhängig sind.
+Ein Beispiel für eine Kopplung ist die Verwendung von globalen Variablen oder 
+die Verwendung von Methoden aus anderen Klassen.
+Die Effekte einer Kopplung können sich schnell auf mehrere Methoden tiefer in der Kette auswirken.
+Angreifer können so Werte in einer Methode generieren, die dann Fehler in einer anderen Methode verursachen.
+Coupling Corruption Propagation \ac{ccp} bestimmt die Anzahl der Methoden, 
+die durch einen Fehler in einer Methode beeinflusst werden können.
+Hierfür wird die Anzahl der Kindmethoden gezählt, mit die einem Parameter aufgerufen werden, 
+welcher auf einem Parameter der Originalmethode beruht.
+Mit einer geringeren Kopplung ist auch der \ac{ccp} geringer.
+Kopplung ist häufig unumgänglich, Methoden mit einer hohen Kopplung sollten daher ausführlich getestet werden.
+% Villeicht beispiel?
+
+\paragraph{Critical Element Ratio \ac{cer}}
+
+Bei objektorientierten Programmiersprachen gibt es Objekte, 
+die während der Laufzeit des Programms initialisiert werden. 
+Für diesen Prozess ist es aber nicht unbedingt nötig alle Aspekte eines Objekts zu initialisieren.
+Andere Aspekte des Objekts sind elementar für das Funktionieren des Programms, 
+wenn sie verändert werden kann das Programm instabil werden und somit ein Sicherheitsrisiko darstellen.
+Es gilt, je höher die Anzahl dieser kritischen Elemente in einer Klasse, desto höher ist das Sicherheitsrisiko.
+Um dieses Risiko zu messen, wird der Anteil der kritischen Datenelemente in einem Objekt berechnet \ac{cer}.
+Wichtig ist hierbei, dass nur datenelemente Berücksichtigt werden, 
+die während der Laufzeit des Programms durch einen Benutzer verändert werden können.
+Die Formel für die Berechnung des \ac{cer} ist in der Formel~\ref{eq:cer} angegeben.
+\begin{equation} \label{eq:cer}
+  \text{Critical Element Ratio} = \frac{ \text{Kritische Datenelemente in einem Objekt} }{ \text{Gesamtanzahl der Elemente in einem Objekt} }
+\end{equation}
+% Villeicht beispiel?
+
+\subsubsection{Security Metrics for Software Systems~\cite{Wang_Wang_Guo_Xia_2009}}
+
+In dem Paper Security Metrics for Software Systems nutzen die Autoren \ac{cve}s (Common Vulnerabilities and Exposures) 
+um Schwachstellen in einem Softwaresystem zu identifizieren. 
+Die Menge an \ac{cve}s, für die ein System anfällig ist diehnt als Indikator für ein potentiell höheres Sicherheitsrisiko.
+Dabei wird auch die Schwere der \ac{cve}s nach \ac{cvss}, sowie die Wahrscheinlichkeit der Ausnutzung berücksichtigt.
+
+\paragraph{Common Vulnerabilitie Scoring System \ac{cvss}}
+
+Das \ac{cvss} ist ein System zur Bewertung der Schwere und 
+des damit einhergehenden Risikos einzelner Sicherheitslücken auf ein Computer-Umgbebungen.
+CVSS wurde von der US-Amerikanischen Organisation National Institute of Standards and Technology \ac{nist} entwickelt. 
+Die Bewertung ist in  3 Kategorien unterteilt, die jeweils eine eigene Skala haben.
+Die Basismetrik misst die grundlegenden Eigenschaften einer Schwachstelle und ist Zeit- und Umgebungsunabhängig.
+Die zeitliche Metrik beschreibt die Schwere einer Schwachstelle in Abhängigkeit von der Zeit.
+Die Umgebungs-Metrik beschreibt die Schwere einer Schwachstelle in Abhängigkeit der Umgebung des Benutzers.
+Für die Bewertung werden mehrere Fragen zu den Metriken mit einem Wert zwischen 0 und 10 beantwortet.
+Der durchschnitt der Werte aller Fragen einer Metrik ergibt den Wert für dieser Metrik (0 - 10).
+Für die Zeitliche Bewertung wird die Bewertung der Basis- und der Zeitmetrik addiert.
+Für die Umgebungs-Bewertung werden alle drei Metriken miteinander verrechnet.
+
+\paragraph{Common Vulnerabilities and Exposures \ac{cve}}
+
+Die Veröffentlichung von Sicherheitslücken findet in der Regel über die \ac{cve}-Datenbank statt, 
+hier werden diese Lücken in einem einheitlichen Format veröffentlicht.
+RedHat schreibt dazu auf ihrer Webseite \cite{Redhat_CVE}: 
+\begin{quote}
+  \textit{
+    CVE, kurz für Common Vulnerabilities and Exposures (Häufige Schwachstellen und Risiken), ist eine Liste mit öffentlichen Sicherheitsschwachstellen in Computersystemen. Mit CVE ist eine bestimmte Schwachstelle gemeint, der eine CVE-Nummer zugewiesen ist.
+    In Sicherheitshinweisen von Anbietern und Forschenden wird fast immer mindestens eine CVE-Nummer erwähnt. Mithilfe von CVEs können IT-Fachleute solche Schwachstellen leichter priorisieren und beheben, um Computersysteme sicherer zu machen.
+  } 
+\end{quote}
+Webseiten wie die \ac{nvd} bieten eine Schnittstelle zur \ac{cve}-Datenbank an und 
+verknüpfen diese mit den entsprechenden Produkten und der \ac{cvss} Bewertung.
+
+\paragraph{Software Sicherheits Metrik}
+
+Für das Erstellen der Metrik haben die Forscher nun vorgeschlagen, 
+die wichtigsten Schwachstelle einer Software zu identifizieren und \ac{cve} Einträge zu diesen zu finden.
+Für diese einzelne Schwachstellen wird dann die durchschnittliche \ac{cvss} Bewertung aller CVEs berechnet.
+So kann die Schwere der Schwachstellen gemessen werden.
+Um das Risiko \(R\) für ein Ausnutzen dieser Schwachstelle in die Bewertung einfließen zu lassen, 
+schlagen die Forscher vor die Anzahl der \ac{cve}s einer Schwachstelle \(K\) mit dem Zeitraum (in Monaten), in dem die Schwachstelle in dem System existierte \(M\) zu verrechnen (siehe Gleichung~\ref{eq:cve_risk}).
+\begin{equation} \label{eq:cve_risk}
+  R = \frac{ K }{ M }
+\end{equation}
+Abschließend wird die durchschnittliche \ac{cvss} Bewertung aller Schwachstellen mit dem Missbrauchsrisiko verrechnet (siehe Gleichung~\ref{eq:cve_risk2}).
+Mit dieser Formel lässt sich die Sicherheit der Software \(s\) berechnen.
+\begin{equation} \label{eq:cve_risk2}
+  SM \left( s \right) = \sum_{ n=1 }^{ m }{ \left[ \left( \frac{ R_{ n } }{ \sum_{ i=1 }^{ m }{ R_{ i } } } \right) \times W_{ n } \right] }
+\end{equation}
+
+\paragraph{Verbesserungsansätze}
+In diesem Paper wenden die Autoren viel Zeit auf um Schwachstellen in dem System zu identifizieren und zu Kathegorisieren.
+Dieser händische Prozess lässt sich durch die Verwendung der National Vulnerability Database deutlich vereinfachen.
+Hier werden Softwaresysteme und Packete aufgelistet, welche Schwachstellen aufweisen und 
+es wird Angemerkt ab welcher Version diese Schwachstelle behoben wurde.
+Zur vereinfachung dieses Prozesses kann es Hilfreich sein einen Scanner zu verwenden, 
+welcher die verwendete Software und Packete identifiziert und 
+die Schwachstellen in der \ac{nvd} Datenbank mit den identifizierten Packeten vergleicht.
+Die gefundenen Schwachstellen können zusammen mit dem Zeitraum, 
+in dem der Scanner diese im System gefunden hat, verwendet werden um die Metrik zu berechnen.
+So kann eine höhere Automatisierung erreicht werden.
+
+\subsubsection{Kombination der Ansätze und Bewertung der Metriken}
+
+\begin{center}
+  \begin{table}
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{NiceTabular}{|l|c|c|c|c|c|c|}
+      \hline
+      & \rotate \alpha-Wert
+      & \rotate \beta-Wert
+      & \rotate \gamma-Wert
+      & \rotate PE und STR
+      & \rotate MTCSC
+      & \rotate RSC\\\hline
+      Vertraulichkeit         &x&x& &x&x&x\\\hline
+      Integrität              &x& &x&x&x&x\\\hline
+      Unbestreitbarkeit       &x& &x& & & \\\hline
+      Verantwortlichkeit      &x&x&x& & & \\\hline
+      Authentizität           &x&x& & & & \\\hline
+    \end{NiceTabular}
+    \caption{Zugehörigkeit der Metriken zu den Sicherheit-Subcharakteristika}
+    \label{table:security_metrics_1}
+  \end{table}
+\end{center}
+
+\begin{center}
+  \begin{table}
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{NiceTabular}{|l|c|c|c|c|}
+      \hline
+      & \rotate SR
+      & \rotate CCP
+      & \rotate CER
+      & \rotate CVE-Metrik\\\hline
+      Vertraulichkeit         & & & &x\\\hline
+      Integrität              & & & &x\\\hline
+      Verantwortlichkeit      &x&x&x&x\\\hline
+      Modifizierbarkeit       & & & &x\\\hline
+      Authentizität           & & & &x\\\hline
+    \end{NiceTabular}
+    \caption{Zugehörigkeit der Metriken zu den Sicherheit-Subcharakteristika}
+    \label{table:security_metrics_2}
+  \end{table}
+\end{center}
+
+In Tabelle \ref{table:security_metrics_1} und \ref{table:security_metrics_2} ist aufgeschlüsselt welche Charakteristika der \ac{iso} 25010 durch die Metriken abgedeckt werden.
+Da in der Analysephase die Grundlagen für alle weiteren Phasen der Softwareentwicklung gelegt werden, 
+deckt der \alpha-Wert alle Charakteristika der \ac{iso} 25010 ab.
+Tabelle \ref{table:security_metrics_1} gibt einen Überblick über die Abdeckung der Metriken des ersten Artikels~\cite{Jain2014SecurityMA}
+Der \beta-Wert gibt eine Aussage über die Effektivität der Designphase, 
+der Fokus liegt daher auf der Identifikation, Authorisierung und weiteren nicht-funktionalen Anforderungen.
+Der \gamma-Wert gibt eine Aussage über die Effektivität der Implementierungsphase, daher ist er wichtig für die Integrität, Unbestreitbarkeit und Verantwortlichkeit.
+Process Effectiveness und Security Testing Ratio ermöglichen die Bewertung der Testphase und 
+die Effektivität darin Fehler und Sicherheitslücken festzustellen. 
+Daher liegt der Fokus hier auf Vertraulichkeit und Integrität.
+Dasselbe gilt auch für die Metriken der Betriebs- und Wartungsphase.
+
+Tabelle \ref{table:security_metrics_2} gibt einen Überblick über die Abdeckung der Metriken der anderen beiden Paper~\cite{Chowdhury_Chan_Zulkernine_2008}~\cite{Wang_Wang_Guo_Xia_2009}.
+Da das erste Paper sich auf die Sicherheit auf der Quellcode-Ebenen konzentriert, deckten die Metriken nur das Charakteristika der Integrität ab.
+Die Tiefe der Analyse ist macht diese Metriken sehr effektiv für die Analyse des Quellcodes.
+Das zweite Paper Fokussiert sich auf die Bewertung von Softwaresystemen auf Basis der Anfälligkeit für bekannte Schwachstellen.
+Da die Art der Schwachstellen vielseitig ist können so abhängig von den betrachteten Systemen und Komponenten auch alle Charakteristika der \ac{iso} 25010 abgedeckt werden.
 
 \subsection{Wartbarkeit}
 
@@ -568,7 +868,6 @@ Diese Kennwerte können dann verwendet werden, um einen Gesamtwert
 für die Wartbarkeit der Software zu bekommen.
 Die Kennzahlen die Genutzt werden sind.
 
-% TODO wie können diese Kennzahlen gemessen werden?
 \paragraph{Quellcodevolumen}
 
 Die Zahl der effektiven Quellcodezeilen im gesamten Bereich der analysiert werden soll.
@@ -772,9 +1071,21 @@ um die Metrik weiter zu verbessern und anzupassen.
 In einer weiteren Arbeit könnte diese Metrik durch
 die Gewichtungen an andere Wartbarkeit-Metriken angepasst werden.
 
+Der Bereich Sicherheit ist sehr umfangreich und es gibt viele verschiedene Ansätze und Metriken.
+Zusammengenommen bieten die behandelten Metriken eine gute Abdeckung der Charakteristika der \ac{iso} 25010 und 
+ermöglicen die Bewertung sowohl auf der tiefen Quellcode-Ebene, als auch mit Hinblick auf das System als ganzes.
+Zusätzlich wird auch der Prozess der Sofwareentwicklung berücksichtigt, 
+der eine elementare Rolle in der Entwicklung von guter, sicherer Software spielt. 
+Die automatisierte Unsetzung aller Ansätze ist schwer möglich, 
+da gerade im Softwareentwicklungsprozess viele verschiedene Personen und Teams involviert sind.
+Dies macht die Analyse sehr komplex.
+Dennoch lassen sich die Metriken zur Sicherheit auf Quellcode-Ebene und auf CVE-Basis sehr gut automatisieren.
+Eine kombination der beiden Ansätze ist ebenfalls möglich, indem man den Sourcecode und die Abhängigkeiten automatisch scannt. 
+
 In einer weiteren Arbeit ist es außerdem Denkbar weitere Metriken zu finden,
 mit denen die übrigen Qualitätscharakteristika 
 einfach quantifiziert werden können.
+
 
 \newpage
 \printbibliography
