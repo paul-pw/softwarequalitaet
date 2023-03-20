@@ -660,13 +660,13 @@ Die Autoren beschreiben hier drei Metriken.
 \begin{itemize}
   \item \textbf{Mean Time to Complete Security Changes \acs{mtcsc}}: Schätzt die durchschnittliche Zeit, die es braucht um einen Sicherheitsfehler zu beheben. 
   \item \textbf{Rate of Vulnerability Assessments \acs{rva}}: Misst die Anzahl der Sicherheitsanalysen pro Quartal.
-  \item \textbf{Ratio of Changes due to security considerations \acs{rsc}}: Misst den Anteil der Änderungen am System auf Grund neuer Sicherheitsanforderungen im Vergleich zur gesammtheit der Systemänderungen.
+  \item \textbf{Ratio of Changes due to security considerations \acs{rsc}}: Misst den Anteil der Änderungen am System aufgrund neuer Sicherheitsanforderungen im Vergleich zur Gesamtheit der Systemänderungen.
 \end{itemize}
 
 \subsubsection{Security Metrics for Source Code Structures~\cite{Chowdhury_Chan_Zulkernine_2008}}
 
-In dem Paper Security Metrics for Source Code Structures werden drei Metriken vorgestellt, 
-welche das Messen der Sicherheit auf Quellcode-Ebene ermöglicen.
+In dem Paper \emph{Security Metrics for Source Code Structures} werden drei Metriken vorgestellt, 
+welche das Messen der Sicherheit auf Quellcode-Ebene ermöglichen.
 Ziel ist es eine Bewertung der Code-Qualität durchzuführen und 
 festzustellen ob Fehler oder Unreinheiten vorhanden sind, die ein Angreifer ausnutzen könnte.
 Die Metriken sind folgende.
@@ -683,7 +683,7 @@ Die Stall Ratio wird mit der Formel~\ref{eq:sr} berechnet.
 % Villeicht ein Beispiel?
 Nicht alle Stall Statements sind schlecht, gerade das Schreiben von Logs, Fehlermeldungen, etc. sind notwendig.
 Dennoch sollte auch die Anzahl sollten auch diese Stall Statements nicht allzu oft vorkommen.
-Angreifer nutzen häufig Denial of Service Angriffe um die Verfügbarkeit von Systemen zu beeinträchtigen.
+Angreifer nutzen häufig Denial of Service Angriffe, um die Verfügbarkeit von Systemen zu beeinträchtigen.
 Eine hohe Anzahl an Stall Statements kann die Auswirkungen eines solchen Angriffs verstärken.
 
 \paragraph{Coupling Corruption Propagation \acs{ccp}}
@@ -695,7 +695,7 @@ Die Effekte einer Kopplung können sich schnell auf mehrere Methoden tiefer in d
 Angreifer können so Werte in einer Methode generieren, die dann Fehler in einer anderen Methode verursachen.
 Coupling Corruption Propagation \ac{ccp} bestimmt die Anzahl der Methoden, 
 die durch einen Fehler in einer Methode beeinflusst werden können.
-Hierfür wird die Anzahl der Kindmethoden gezählt, mit die einem Parameter aufgerufen werden, 
+Hierfür wird die Anzahl der Kindmethoden gezählt, die mit einem Parameter aufgerufen werden, 
 welcher auf einem Parameter der Originalmethode beruht.
 Mit einer geringeren Kopplung ist auch der \ac{ccp} geringer.
 Kopplung ist häufig unumgänglich, Methoden mit einer hohen Kopplung sollten daher ausführlich getestet werden.
@@ -710,7 +710,7 @@ Andere Aspekte des Objekts sind elementar für das Funktionieren des Programms,
 wenn sie verändert werden kann das Programm instabil werden und somit ein Sicherheitsrisiko darstellen.
 Es gilt, je höher die Anzahl dieser kritischen Elemente in einer Klasse, desto höher ist das Sicherheitsrisiko.
 Um dieses Risiko zu messen, wird der Anteil der kritischen Datenelemente in einem Objekt berechnet \ac{cer}.
-Wichtig ist hierbei, dass nur datenelemente Berücksichtigt werden, 
+Wichtig ist hierbei, dass nur Datenelemente berücksichtigt werden, 
 die während der Laufzeit des Programms durch einen Benutzer verändert werden können.
 Die Formel für die Berechnung des \ac{cer} ist in der Formel~\ref{eq:cer} angegeben.
 \begin{equation} \label{eq:cer}
@@ -720,9 +720,9 @@ Die Formel für die Berechnung des \ac{cer} ist in der Formel~\ref{eq:cer} angeg
 
 \subsubsection{Security Metrics for Software Systems~\cite{Wang_Wang_Guo_Xia_2009}}
 
-In dem Paper Security Metrics for Software Systems nutzen die Autoren \ac{cve}s (Common Vulnerabilities and Exposures) 
+In dem Paper \emph{Security Metrics for Software Systems} nutzen die Autoren \ac{cve}s (Common Vulnerabilities and Exposures) 
 um Schwachstellen in einem Softwaresystem zu identifizieren. 
-Die Menge an \ac{cve}s, für die ein System anfällig ist diehnt als Indikator für ein potentiell höheres Sicherheitsrisiko.
+Die Menge an \ac{cve}s, für die ein System anfällig ist, dient als Indikator für ein potenziell höheres Sicherheitsrisiko.
 Dabei wird auch die Schwere der \ac{cve}s nach \ac{cvss}, sowie die Wahrscheinlichkeit der Ausnutzung berücksichtigt.
 
 \paragraph{Common Vulnerabilitie Scoring System \acs{cvss}}
@@ -735,8 +735,8 @@ Die Basismetrik misst die grundlegenden Eigenschaften einer Schwachstelle und is
 Die zeitliche Metrik beschreibt die Schwere einer Schwachstelle in Abhängigkeit von der Zeit.
 Die Umgebungs-Metrik beschreibt die Schwere einer Schwachstelle in Abhängigkeit der Umgebung des Benutzers.
 Für die Bewertung werden mehrere Fragen zu den Metriken mit einem Wert zwischen 0 und 10 beantwortet.
-Der durchschnitt der Werte aller Fragen einer Metrik ergibt den Wert für dieser Metrik (0 - 10).
-Für die Zeitliche Bewertung wird die Bewertung der Basis- und der Zeitmetrik addiert.
+Der durchschnitt der Werte aller Fragen einer Metrik ergibt den Wert für diese Metrik (0 - 10).
+Für die zeitliche Bewertung wird die Bewertung der Basis- und der Zeitmetrik addiert.
 Für die Umgebungs-Bewertung werden alle drei Metriken miteinander verrechnet.
 
 \paragraph{Common Vulnerabilities and Exposures \acs{cve}}
@@ -771,15 +771,15 @@ Mit dieser Formel lässt sich die Sicherheit der Software \(s\) berechnen.
 \end{equation}
 
 \paragraph{Verbesserungsansätze}
-In diesem Paper wenden die Autoren viel Zeit auf um Schwachstellen in dem System zu identifizieren und zu Kathegorisieren.
+In diesem Paper wenden die Autoren viel Zeit auf, um Schwachstellen in dem System zu identifizieren und zu Kategorisieren.
 Dieser händische Prozess lässt sich durch die Verwendung der National Vulnerability Database deutlich vereinfachen.
 Hier werden Softwaresysteme und Packete aufgelistet, welche Schwachstellen aufweisen und 
-es wird Angemerkt ab welcher Version diese Schwachstelle behoben wurde.
-Zur vereinfachung dieses Prozesses kann es Hilfreich sein einen Scanner zu verwenden, 
+es wird angemerkt ab welcher Version diese Schwachstelle behoben wurde.
+Zur Vereinfachung dieses Prozesses kann es Hilfreich sein einen Scanner zu verwenden, 
 welcher die verwendete Software und Packete identifiziert und 
-die Schwachstellen in der \ac{nvd} Datenbank mit den identifizierten Packeten vergleicht.
+die Schwachstellen in der \ac{nvd} Datenbank mit den identifizierten Paketen vergleicht.
 Die gefundenen Schwachstellen können zusammen mit dem Zeitraum, 
-in dem der Scanner diese im System gefunden hat, verwendet werden um die Metrik zu berechnen.
+in dem der Scanner diese im System gefunden hat, verwendet werden, um die Metrik zu berechnen.
 So kann eine höhere Automatisierung erreicht werden.
 
 \subsubsection{Kombination der Ansätze und Bewertung der Metriken}
@@ -833,7 +833,7 @@ Tabelle \ref{table:security_metrics_1} gibt einen Überblick über die Abdeckung
 Da in der Analysephase die Grundlagen für alle weiteren Phasen der Softwareentwicklung gelegt werden, 
 deckt der \alpha-Wert alle Charakteristika der \ac{iso} 25010 ab.
 Der \beta-Wert gibt eine Aussage über die Effektivität der Designphase, 
-der Fokus liegt daher auf der Identifikation, Authorisierung und weiteren nicht-funktionalen Anforderungen.
+der Fokus liegt daher auf der Identifikation, Autorisierung und weiteren nicht-funktionalen Anforderungen.
 Der \gamma-Wert gibt eine Aussage über die Effektivität der Implementierungsphase, daher ist er wichtig für die Integrität, Unbestreitbarkeit und Verantwortlichkeit.
 Process Effectiveness und Security Testing Ratio ermöglichen die Bewertung der Testphase und 
 die Effektivität darin Fehler und Sicherheitslücken festzustellen. 
@@ -842,9 +842,9 @@ Dasselbe gilt auch für die Metriken der Betriebs- und Wartungsphase.
 
 Tabelle \ref{table:security_metrics_2} gibt einen Überblick über die Abdeckung der Metriken der anderen beiden Paper~\cite{Chowdhury_Chan_Zulkernine_2008}~\cite{Wang_Wang_Guo_Xia_2009}.
 Da das erste Paper sich auf die Sicherheit auf der Quellcode-Ebenen konzentriert, deckten die Metriken nur das Charakteristika der Integrität ab.
-Die Tiefe der Analyse ist macht diese Metriken sehr effektiv für die Analyse des Quellcodes.
-Das zweite Paper Fokussiert sich auf die Bewertung von Softwaresystemen auf Basis der Anfälligkeit für bekannte Schwachstellen.
-Da die Art der Schwachstellen vielseitig ist können so abhängig von den betrachteten Systemen und Komponenten auch alle Charakteristika der \ac{iso} 25010 abgedeckt werden.
+Die Tiefe der Analyse ist, macht diese Metriken sehr effektiv für die Analyse des Quellcodes.
+Das zweite Paper fokussiert sich auf die Bewertung von Softwaresystemen auf Basis der Anfälligkeit für bekannte Schwachstellen.
+Da die Art der Schwachstellen vielseitig ist, können so abhängig von den betrachteten Systemen und Komponenten auch alle Charakteristika der \ac{iso} 25010 abgedeckt werden.
 
 \subsection{Wartbarkeit}
 
@@ -980,7 +980,7 @@ In~\cite{maintainability_metrics} wird die Komplexität der Einheiten und die Co
 als Metrik für die Modifizierbarkeit genannt.
 Code-Duplikation verringert die Modifizierbarkeit, da an Stellen mit dupliziertem Code,
 alle Teile des duplizierten Codes gleichermaßen geändert werden müssen.
-Das erhöht den Modifikations-Aufwand stark und erhöht die Chance,
+Das erhöht den Modifikationsaufwand stark und erhöht die Chance,
 dass bei Modifikationen vergessen wird Teile des duplizierten Codes zu ändern und so Fehler im Programm entstehen.
 Eine hohe Komplexität der Einheiten sorgt dafür,
 dass es schwieriger ist diese Einheiten zu modifizieren, ohne Fehler in der Software zu erzeugen.
@@ -1073,14 +1073,14 @@ die Gewichtungen an andere Wartbarkeit-Metriken angepasst werden.
 
 Der Bereich Sicherheit ist sehr umfangreich und es gibt viele verschiedene Ansätze und Metriken.
 Zusammengenommen bieten die behandelten Metriken eine gute Abdeckung der Charakteristika der \ac{iso} 25010 und 
-ermöglicen die Bewertung sowohl auf der tiefen Quellcode-Ebene, als auch mit Hinblick auf das System als ganzes.
-Zusätzlich wird auch der Prozess der Sofwareentwicklung berücksichtigt, 
+ermöglichen die Bewertung sowohl auf der tiefen Quellcode-Ebene, als auch mit Hinblick auf das System als ganzes.
+Zusätzlich wird auch der Prozess der Softwareentwicklung berücksichtigt, 
 der eine elementare Rolle in der Entwicklung von guter, sicherer Software spielt. 
-Die automatisierte Unsetzung aller Ansätze ist schwer möglich, 
+Die automatisierte Umsetzung aller Ansätze ist schwer möglich, 
 da gerade im Softwareentwicklungsprozess viele verschiedene Personen und Teams involviert sind.
 Dies macht die Analyse sehr komplex.
 Dennoch lassen sich die Metriken zur Sicherheit auf Quellcode-Ebene und auf CVE-Basis sehr gut automatisieren.
-Eine kombination der beiden Ansätze ist ebenfalls möglich, indem man den Sourcecode und die Abhängigkeiten automatisch scannt. 
+Eine Kombination der beiden Ansätze ist ebenfalls möglich, indem man den Sourcecode und die Abhängigkeiten automatisch scannt. 
 
 In einer weiteren Arbeit ist es außerdem Denkbar weitere Metriken zu finden,
 mit denen die übrigen Qualitätscharakteristika 
