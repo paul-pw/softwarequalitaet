@@ -591,10 +591,10 @@ Im folgenden wird eine Auswahl der wichtigsten Metriken für die Phasen vorgeste
 Diese Phase konzentriert sich auf das Sammeln von (Sicherheits-) Anforderungen.
 Smirity und Ingle beschreiben hier vier Metriken für die Sicherheit.
 \begin{itemize}
-  \item \textbf{Number of Security Requirements Gathered \ac{nsrg}}: Anzahl der Sicherheitsanforderungen die in dieser Phase erfasst wurden.
-  \item \textbf{Security Requirements Recorded Deviations \ac{srrd}}: Anzahl der Abweichungen von den zuvor definierten Sicherheitsanforderungen in den Anforderungsspezifikationen.
-  \item \textbf{Security Requirements stage Security Errors \ac{srse}}: Anzahl der Sicherheitsfehler, welche aus fehlerhaften Sicherheitsanforderungen resultieren.
-  \item \textbf{Security Requirements Gathering Indicators \ac{sri}}: Misst den Einfluss der Analysephase auf die Anzahl der Sicherheitslücken. 
+  \item \textbf{Number of Security Requirements Gathered \acs{nsrg}}: Anzahl der Sicherheitsanforderungen die in dieser Phase erfasst wurden.
+  \item \textbf{Security Requirements Recorded Deviations \acs{srrd}}: Anzahl der Abweichungen von den zuvor definierten Sicherheitsanforderungen in den Anforderungsspezifikationen.
+  \item \textbf{Security Requirements stage Security Errors \acs{srse}}: Anzahl der Sicherheitsfehler, welche aus fehlerhaften Sicherheitsanforderungen resultieren.
+  \item \textbf{Security Requirements Gathering Indicators \acs{sri}}: Misst den Einfluss der Analysephase auf die Anzahl der Sicherheitslücken. 
 \end{itemize}
 Für die Auswertung dieser Metriken schlagen die Autoren vor, dass diese Metriken mit der Methode der kleinsten Quadrate zusammengefasst werden.
 Dabei werden die Metriken \ac{srrd}, \ac{srse} und \ac{sri} als abhängig definiert, während \ac{nsrg} als unabhängig betrachtet wird.
@@ -613,9 +613,9 @@ In dieser Phase werden die Anforderungen in ein Design überführt.
 Hier ist die Umsetzung von nicht-funktionalen Anforderungen, wie Fehlerbehandlung, Fehlermeldungen und Autorisierung wichtig.
 Die Autoren definieren für diese Phase drei Metriken.
 \begin{itemize}
-  \item \textbf{Security Requirements Statistics \ac{srs}}: Prozentsatz der Sicherheitsanforderungen, welche in der Designphase bedacht wurden.
-  \item \textbf{Design Tools und Test Effectiveness \ac{dtte}}: Misst den Anteil von Analysetools (z.B. Threat Analysis und Attack Patterns) und Testing an den Sicherheitsrelevanten Designaspekten. 
-  \item \textbf{Number of Design stage Security Errors \ac{ndse}}: Misst die Anzahl der Sicherheitsfehler, welche aus dem Softwaredesign resultieren. 
+  \item \textbf{Security Requirements Statistics \acs{srs}}: Prozentsatz der Sicherheitsanforderungen, welche in der Designphase bedacht wurden.
+  \item \textbf{Design Tools und Test Effectiveness \acs{dtte}}: Misst den Anteil von Analysetools (z.B. Threat Analysis und Attack Patterns) und Testing an den Sicherheitsrelevanten Designaspekten. 
+  \item \textbf{Number of Design stage Security Errors \acs{ndse}}: Misst die Anzahl der Sicherheitsfehler, welche aus dem Softwaredesign resultieren. 
 \end{itemize}
 Für die Auswertung dieser Metriken multipizieren die Autoren die Metriken \ac{dtte} und \ac{ndse}, das Ergebnis ist \beta. 
 Da \ac{dtte} den Anzeil von Tools und Tests an dem resultierenden Design misst und \ac{ndse} die Fehler welche aus dieser Phase entstehen zählt, 
@@ -632,9 +632,9 @@ Ein \beta-Wert von 0 impliziert, dass das Testing sehr Effektiv ist und es keine
 In dieser Phase wird Sicherheit durch Input- und Outputvalidierung und durch die Verwendung von guten Programmierstandards erreicht.
 Die Autoren beschreiben hier drei Metriken um die Sicherheitsanstrengungen der Entwickler zu messen.
 \begin{itemize}
-  \item \textbf{Percent of Secure Coding Aspects \ac{psca}}: Misst das Verhälltnis der Sicherheitsrelevanten Coding-Aspekte in der Entwicklungsphase im Vergleich zu den Designaspekten (aus der Designphase).
-  \item \textbf{Percent use of Coding Standards \ac{pcs}}: Misst den Anteil an Coding-Standards für sichere Entwicklung, die verwendet wurden. Sie kann als ein Annährung für \ac{nse} dienen.
-  \item \textbf{Number of Security Errors \ac{nse}}: Misst die Anzahl an Programmierfehlern, welche im Programm vorhanden sind oder durch externe Librarys eingebracht wurden.
+  \item \textbf{Percent of Secure Coding Aspects \acs{psca}}: Misst das Verhälltnis der Sicherheitsrelevanten Coding-Aspekte in der Entwicklungsphase im Vergleich zu den Designaspekten (aus der Designphase).
+  \item \textbf{Percent use of Coding Standards \acs{pcs}}: Misst den Anteil an Coding-Standards für sichere Entwicklung, die verwendet wurden. Sie kann als ein Annährung für \ac{nse} dienen.
+  \item \textbf{Number of Security Errors \acs{nse}}: Misst die Anzahl an Programmierfehlern, welche im Programm vorhanden sind oder durch externe Librarys eingebracht wurden.
 \end{itemize}
 Für die Auswertung verwenden die Autoren wird hier wieder die Methode der kleinsten Quadrate verwendet.
 Der resultierende Wert \gamma (Gleichung~\ref{eq:gamma}) beschreibt die Effektivität der Implementierungsphase in Bezug auf die Sicherheit.
@@ -648,8 +648,8 @@ Ein negativer \gamma Wert deutet auf eine hohe Fehleranzahl hin und ein Wert nah
 In dieser Phase wird die Software auf Sicherheitslücken getestet.
 Die wichtigsten Metriken sind folgende.
 \begin{itemize}
-  \item \textbf{Process Effectiveness \ac{pe}}: Beschreibt das Verhältnis zwischen der Anzahl der entdeckten Sicherheitslücken und der Anzahl der Module, die Sicherheitstest unterzogen wurden.
-  \item \textbf{Security Testing Ratio \ac{str}}: Misst den Anteil der Module, die Sicherheitstests unterzogen wurden.
+  \item \textbf{Process Effectiveness \acs{pe}}: Beschreibt das Verhältnis zwischen der Anzahl der entdeckten Sicherheitslücken und der Anzahl der Module, die Sicherheitstest unterzogen wurden.
+  \item \textbf{Security Testing Ratio \acs{str}}: Misst den Anteil der Module, die Sicherheitstests unterzogen wurden.
 \end{itemize}
 
 \paragraph{Phase 5: Betrieb und Wartung}
@@ -658,9 +658,9 @@ In dieser Phase werden Risikobewertungen und Sicherheitsanalysen durchgeführt u
 Außerdem findet hier das Logging, Monitoring und die Analyse von Sicherheitsereignissen statt.
 Die Autoren beschreiben hier drei Metriken.
 \begin{itemize}
-  \item \textbf{Mean Time to Complete Security Changes \ac{mtcsc}}: Schätzt die durchschnittliche Zeit, die es braucht um einen Sicherheitsfehler zu beheben. 
-  \item \textbf{Rate of Vulnerability Assessments \ac{rva}}: Misst die Anzahl der Sicherheitsanalysen pro Quartal.
-  \item \textbf{Ratio of Changes due to security considerations \ac{rsc}}: Misst den Anteil der Änderungen am System auf Grund neuer Sicherheitsanforderungen im Vergleich zur gesammtheit der Systemänderungen.
+  \item \textbf{Mean Time to Complete Security Changes \acs{mtcsc}}: Schätzt die durchschnittliche Zeit, die es braucht um einen Sicherheitsfehler zu beheben. 
+  \item \textbf{Rate of Vulnerability Assessments \acs{rva}}: Misst die Anzahl der Sicherheitsanalysen pro Quartal.
+  \item \textbf{Ratio of Changes due to security considerations \acs{rsc}}: Misst den Anteil der Änderungen am System auf Grund neuer Sicherheitsanforderungen im Vergleich zur gesammtheit der Systemänderungen.
 \end{itemize}
 
 \subsubsection{Security Metrics for Source Code Structures~\cite{Chowdhury_Chan_Zulkernine_2008}}
@@ -671,7 +671,7 @@ Ziel ist es eine Bewertung der Code-Qualität durchzuführen und
 festzustellen ob Fehler oder Unreinheiten vorhanden sind, die ein Angreifer ausnutzen könnte.
 Die Metriken sind folgende.
 
-\paragraph{Stall Ratio \ac{sr}}
+\paragraph{Stall Ratio \acs{sr}}
 
 Die Stall Ratio misst, welcher Anteil des Programmcodes nicht benötigt wird, um dessen definiertes Ziel zu erreichen.
 Gerade in einer Schleife verzögern sogenannte Stall Statements die Ausführung des Programms und können somit einen Angriff erleichtern.
@@ -686,7 +686,7 @@ Dennoch sollte auch die Anzahl sollten auch diese Stall Statements nicht allzu o
 Angreifer nutzen häufig Denial of Service Angriffe um die Verfügbarkeit von Systemen zu beeinträchtigen.
 Eine hohe Anzahl an Stall Statements kann die Auswirkungen eines solchen Angriffs verstärken.
 
-\paragraph{Coupling Corruption Propagation \ac{ccp}}
+\paragraph{Coupling Corruption Propagation \acs{ccp}}
 
 Kopplung von Methoden meint, dass zwei oder mehr Methoden voneinander abhängig sind.
 Ein Beispiel für eine Kopplung ist die Verwendung von globalen Variablen oder 
@@ -701,7 +701,7 @@ Mit einer geringeren Kopplung ist auch der \ac{ccp} geringer.
 Kopplung ist häufig unumgänglich, Methoden mit einer hohen Kopplung sollten daher ausführlich getestet werden.
 % Villeicht beispiel?
 
-\paragraph{Critical Element Ratio \ac{cer}}
+\paragraph{Critical Element Ratio \acs{cer}}
 
 Bei objektorientierten Programmiersprachen gibt es Objekte, 
 die während der Laufzeit des Programms initialisiert werden. 
@@ -725,7 +725,7 @@ um Schwachstellen in einem Softwaresystem zu identifizieren.
 Die Menge an \ac{cve}s, für die ein System anfällig ist diehnt als Indikator für ein potentiell höheres Sicherheitsrisiko.
 Dabei wird auch die Schwere der \ac{cve}s nach \ac{cvss}, sowie die Wahrscheinlichkeit der Ausnutzung berücksichtigt.
 
-\paragraph{Common Vulnerabilitie Scoring System \ac{cvss}}
+\paragraph{Common Vulnerabilitie Scoring System \acs{cvss}}
 
 Das \ac{cvss} ist ein System zur Bewertung der Schwere und 
 des damit einhergehenden Risikos einzelner Sicherheitslücken auf ein Computer-Umgbebungen.
@@ -739,7 +739,7 @@ Der durchschnitt der Werte aller Fragen einer Metrik ergibt den Wert für dieser
 Für die Zeitliche Bewertung wird die Bewertung der Basis- und der Zeitmetrik addiert.
 Für die Umgebungs-Bewertung werden alle drei Metriken miteinander verrechnet.
 
-\paragraph{Common Vulnerabilities and Exposures \ac{cve}}
+\paragraph{Common Vulnerabilities and Exposures \acs{cve}}
 
 Die Veröffentlichung von Sicherheitslücken findet in der Regel über die \ac{cve}-Datenbank statt, 
 hier werden diese Lücken in einem einheitlichen Format veröffentlicht.
@@ -818,8 +818,8 @@ So kann eine höhere Automatisierung erreicht werden.
       & \rotate CER
       & \rotate CVE-Metrik\\\hline
       Vertraulichkeit         & & & &x\\\hline
-      Integrität              & & & &x\\\hline
-      Verantwortlichkeit      &x&x&x&x\\\hline
+      Integrität              &x&x&x&x\\\hline
+      Verantwortlichkeit      & & & &x\\\hline
       Modifizierbarkeit       & & & &x\\\hline
       Authentizität           & & & &x\\\hline
     \end{NiceTabular}
@@ -829,9 +829,9 @@ So kann eine höhere Automatisierung erreicht werden.
 \end{center}
 
 In Tabelle \ref{table:security_metrics_1} und \ref{table:security_metrics_2} ist aufgeschlüsselt welche Charakteristika der \ac{iso} 25010 durch die Metriken abgedeckt werden.
+Tabelle \ref{table:security_metrics_1} gibt einen Überblick über die Abdeckung der Metriken des ersten Artikels~\cite{Jain2014SecurityMA}
 Da in der Analysephase die Grundlagen für alle weiteren Phasen der Softwareentwicklung gelegt werden, 
 deckt der \alpha-Wert alle Charakteristika der \ac{iso} 25010 ab.
-Tabelle \ref{table:security_metrics_1} gibt einen Überblick über die Abdeckung der Metriken des ersten Artikels~\cite{Jain2014SecurityMA}
 Der \beta-Wert gibt eine Aussage über die Effektivität der Designphase, 
 der Fokus liegt daher auf der Identifikation, Authorisierung und weiteren nicht-funktionalen Anforderungen.
 Der \gamma-Wert gibt eine Aussage über die Effektivität der Implementierungsphase, daher ist er wichtig für die Integrität, Unbestreitbarkeit und Verantwortlichkeit.
