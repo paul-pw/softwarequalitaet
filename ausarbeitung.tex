@@ -193,8 +193,8 @@
 
 \renewcommand{\abstractname}{Abstract} % dass Abstract auch Abstract heißt und nicht zusammenfassung
 \begin{abstract}
-Softwarequalität zu messen kann sich mitunter als schwierig herausstellen.
-Diese Arbeit hat das Ziel einfache Metriken für Qualitätscharakteristika
+Softwarequalität zu messen, kann sich mitunter als schwierig herausstellen.
+Diese Arbeit hat das Ziel, einfache Metriken für Qualitätscharakteristika
 zu erarbeiten.
 Diese Metriken sollen einfach automatisiert messbar sein
 und so einen kontinuierlichen Indikator für die Softwarequalität geben,
@@ -209,19 +209,19 @@ gesetzt.
 Die meisten Menschen arbeiten jeden Tag mit verschiedener Software.
 In der Arbeit mit Office-Software oder je nach Beruf spezialisierter
 Software für bestimmte Aufgaben und/oder Maschinen.
-Zu Hause nutzen viele Menschen Unterhaltungssoftware wie Spiele,
+Zu Hause nutzen viele Menschen Unterhaltungssoftware wie Spiele
 oder Videoplattformen.
-Software ist heutzutage allgegenwärtig und die meisten Menschen,
+Software ist heutzutage allgegenwärtig und die meisten Menschen
 werden auch schon einmal Software schlechter Qualität genutzt haben.
 Das kann durch abruptes Schließen einer Applikation,
 unintuitives Design oder langer Ladezeiten
 für den Nutzer erkennbar sein.
-Es kann recht einfach sein,
+Es kann recht einfach sein
 schlechte Qualitäten in Software zu erkennen,
-allerdings lässt sich Softwarequalität so nicht Objektiv vergleichen.
+allerdings lässt sich Softwarequalität so nicht objektiv vergleichen.
 
 Diese Arbeit beschäftigt sich damit Metriken zu finden,
-mit denen Software Qualität Objektiv gemessen werden kann.
+mit denen Software Qualität objektiv gemessen werden kann.
 Softwaremetriken werden hauptsächlich
 in der Softwareentwicklung genutzt.
 Während der Softwareentwicklung können Software Metriken
@@ -236,7 +236,7 @@ und um die Softwareentwicklung in bestimmte Richtungen zu leiten.
 
 \section{Softwarequalität}
 
-Um Softwarequalität messen zu können muss zuerst festgelegt werden,
+Um Softwarequalität messen zu können, muss zuerst festgelegt werden,
 was Softwarequalität überhaupt ist.
 Viele Aspekte von Softwarequalität sind für den Endnutzer gar nicht
 erkennbar oder sind nur dann erkennbar,
@@ -245,7 +245,7 @@ wenn dieser Aspekt eine schlechte Qualität hat.
 In dieser Arbeit wird die Definition von Softwarequalität
 nach \ac{iso} 25010~\cite{ISO25010} verwendet.
 In dem \ac{iso} 25010 Standard wird ein Produktqualitätsmodell
-für System und Softwarequalität.
+für System und Softwarequalität definiert.
 Nach diesem Modell wird die Qualität eines Softwaresystems oder Produkts
 durch acht Charakteristika definiert.
 Diese Charakteristika werden in Abbildung~\ref*{fig:uml:softwarequality} dargestellt.
@@ -277,15 +277,15 @@ und implizierten Anforderungen und Bedürfnisse erfüllt werden~\cite{ISO25010}.
 
 \paragraph{Leistungsfähigkeit}
 
-Die Leistungsfähigkeit beschreibt die Leistung von Software 
+Die Leistungsfähigkeit beschreibt die Leistung von Software, 
 abhängig von den vorhandenen Ressourcen~\cite{ISO25010}.
-Dabei meinen Ressourcen sowohl Hardwareressourcen wie Rechenleistung oder Speicher
-als auch Softwareressourcen wie Konfigurationen oder genutzte Bibliotheken.
+Dabei meinen Ressourcen sowohl Hardwareressourcen wie Rechenleistung oder Speicher,
+als auch Softwareressourcen, wie Konfigurationen oder genutzte Bibliotheken.
 
 \paragraph{Kompatibilität}
 
 Der Grad zu dem ein Softwareprodukt oder System mit anderen Softwareprodukten oder Systemen Informationen
-austauschen kann wird durch die Kompatibilität beschrieben~\cite{ISO25010}.
+austauschen kann, wird durch die Kompatibilität beschrieben~\cite{ISO25010}.
 Außerdem beschreibt die Kompatibilität inwiefern verschiedene Softwaresysteme oder Produkte die gleiche Hardware
 oder Softwareumgebung nutzen können, ohne dass dies zu Problemen führt.
 
@@ -294,14 +294,14 @@ oder Softwareumgebung nutzen können, ohne dass dies zu Problemen führt.
 Der Grad der Benutzerfreundlichkeit ist nach \ac{iso},
 wie effektiv und effizient ein definiertes Ziel von bestimmten Nutzern
 mit einem Softwareprodukt oder System erreicht werden kann
-und wie Zufrieden die Nutzer dabei sind~\cite{ISO25010}.
+und wie zufrieden die Nutzer dabei sind~\cite{ISO25010}.
 
 Teile der Benutzerfreundlichkeit sind von der \ac{iso} 9241-210 Norm
 zur Ergonomie von Mensch-System-Interaktionen adaptiert.
 
 \paragraph{Zuverlässigkeit}
 
-Zuverlässigkeit ist die Fähigkeit eines Softwareprodukts oder Systems
+Zuverlässigkeit ist die Fähigkeit eines Softwareprodukts oder Systems,
 die erforderlichen Funktionen des Produkts oder Systems über einen bestimmten Zeitraum 
 und unter bestimmten Bedingungen zu erfüllen~\cite{ISO25010}.
 Unzuverlässige Software könnte beispielsweise durch Fehler in der Software
@@ -313,16 +313,16 @@ sondern beispielsweise durch einen Neustart der Software länger Zeit benötigen
 
 Die Sicherheit von Software ist der Grad zu dem die Software Informationen und Daten schützt.
 Informationen und Daten sind dann geschützt,
-wenn andere Personen oder Produkte nur Zugriff auf Daten 
-entsprechend ihrer Berechtigung haben~\cite{ISO25010}.
-Dabei darf sich die Sicherheit der Daten weder beim Transport der Daten
-noch währen eines Angriffs auf die Software ändern~\cite{ISO25010}.
+wenn andere Personen oder Produkte nur Zugriff auf Daten, 
+entsprechend ihrer Berechtigung, haben~\cite{ISO25010}.
+Dabei darf sich die Sicherheit der Daten weder beim Transport der Daten,
+noch während eines Angriffs auf die Software ändern~\cite{ISO25010}.
 
 Auf die Sicherheit wird in Abschnitt~\ref{sec:sicherheit} weiter eingegangen.
 
 \paragraph{Wartbarkeit}
 
-Der Grad der Wartbarkeit beschreibt die Effektivität und die Effizienz
+Der Grad der Wartbarkeit beschreibt die Effektivität und die Effizienz,
 mit der ein Softwareprodukt oder System modifiziert werden kann.
 
 Auf die Wartbarkeit wird in Abschnitt~\ref{sec:wartbarkeit} weiter eingegangen.
@@ -450,7 +450,7 @@ die für den Entwicklungsprozess nicht generell eine Rolle spielen.
 So ist die Leistungsfähigkeit von Software 
 meist nur in kritischen Bereichen der Software relevant.
 Die Benutzerfreundlichkeit von Software spielt 
-in der Regel nur in Bereichen, mit denen ein Benutzer interagiert eine Rolle.
+in der Regel nur in Bereichen mit denen ein Benutzer interagiert eine Rolle.
 Dagegen ist die Wartbarkeit von Software
 immer dann relevant, 
 wenn an und mit bestehendem Quellcode gearbeitet werden muss.
@@ -459,8 +459,8 @@ die eine hohe Wartbarkeit aufweisen,
 werden in der Entwicklung und der Wartung einfacher sein
 als Softwareprodukte oder Systeme,
 die eine geringe Wartbarkeit aufweisen.
-Außerdem muss während des ganzen Entwicklungsprozess
-darauf geachtet werden die potenziell geltenden 
+Außerdem muss während des ganzen Entwicklungsprozesses
+darauf geachtet werden, die potenziell geltenden 
 Regeln und Vorschriften zur Wartbarkeit von Software einzuhalten.
 
 \begin{figure}
@@ -525,10 +525,10 @@ die feststellen, ob ein bestimmtes Kriterium erfüllt wurde~\cite{IEEE24765}.
 Software Metriken sind quantitative Maße,
 die zur Bewertung von Softwareprodukten und Softwaresystemen
 genutzt werden können.
-Diese Metriken können verschiedene Aspekte der Software Bewerten.
+Diese Metriken können verschiedene Aspekte der Software bewerten.
 Hier werden Metriken vorgestellt,
 mit denen die Wartbarkeit und die Sicherheit
-analysiert werden könne.
+analysiert werden können.
 
 Software Metriken geben sowohl den Entwicklern
 als auch den Stakeholdern der Software
@@ -538,7 +538,7 @@ um Risiken frühzeitig zu erkennen,
 Verbesserungen und Verschlechterungen zu quantifizieren
 und verschiedene Software vergleichen zu können.
 Software Metriken können in der Kommunikation
-zwischen Entwicklern und Stakeholdern helfen,
+zwischen Entwicklern und Stakeholdern helfen
 da sie helfen Eigenschaften der Software zu objektifizierten
 und sich so beispielsweise bestimmte Entwicklungstätigkeiten,
 wie das Refactoring von Software
@@ -552,12 +552,12 @@ kann mehr Zeit für die Entwicklung dieses Features
 eingeplant werden, damit Qualitätsstandards eingehalten werden können.
 
 Mit Softwaremetriken die,
-die Softwarequalität quantifizieren
+die Softwarequalität quantifizieren,
 können Regeln eingeführt werden,
 die bestimmte Mindestanforderungen an die Softwarequalität stellen.
 So kann in der Theorie eine konstante objektiv gute Qualität der Software
 gewährleistet werden.
-Um diese Regeln umzusetzen ist es hilfreich
+Um diese Regeln umzusetzen, ist es hilfreich
 die nötigen Metriken automatisch zu generieren
 und Änderungen an der Software nur dann zu erlauben,
 wenn die Regeln eingehalten werden.
@@ -565,15 +565,15 @@ wenn die Regeln eingehalten werden.
 \subsection{Sicherheit}
 
 Sicherheit ist ein Feld, welches in der Informatik sehr weit gefasst ist und in den meisten Themenbereichen eine elementare Rolle spielt.
-Daher ist es nicht verwunderlich, dass es schwer ist allgemeine Metriken für das Messen der Sicherheit von Software zu erarbeiten.
+Daher ist es nicht verwunderlich, dass es schwer ist, allgemeine Metriken für das Messen der Sicherheit von Software zu erarbeiten.
 Es gibt einige Artikel und Konferenz Papiere, die unterschiedliche Ansätze für das definieren von Metriken verfolgen und es gibt einige 
 Metaanalysen, die die Ergebnisse dieser Arbeiten miteinander vergleichen. 
 Zusätzlich dazu wurden Standards definiert, 
 welche jedoch weit gefasst sind und eine unpräzise Definition für Sicherheits-Metriken liefern~\cite{MeFlado_Fernández-Medina_Piattini_2010}.
 
-Um einen konkreten Ansatz für die Bewertung der Sicherheit mittels Metriken zu finden werden 
+Um einen konkreten Ansatz für die Bewertung der Sicherheit mittels Metriken zu finden, werden 
 drei unterschiedliche Ansätze (vereinfacht) vorgestellt~\cite{Jain2014SecurityMA}~\cite{Chowdhury_Chan_Zulkernine_2008}~\cite{Wang_Wang_Guo_Xia_2009} und 
-miteinander Kombiniert.
+miteinander kombiniert.
 Ziel ist es so eine Sammlung an Metriken zu erhalten, 
 welche eine Bewertung der Sicherheit einer Software über den Entwicklungsprozess hinweg ermöglichen. 
 Abschließend wird bewertet, inwieweit die Sammlung der Metriken alle Subcharakteristika für Sicherheit im \ac{iso} 25010 Qualitätsmodell abdeckt.
@@ -584,7 +584,7 @@ Zusätzlich wird die Möglichkeit zur Automatisierung des Bewertungsprozesses be
 In ihrem Artikel Security Metrics and Software Development Progression beschreiben die Autoren Smirity Jain und Maya Ingle eine Sammlung von Metriken, 
 welche die Sicherheit von Software über den gesamten Entwicklungsprozesses hinweg messen.
 Mit diesen Metriken ist es möglich im nachhinein die Effektivität der fünf Phasen des Entwicklungsprozesses in Hinblick auf die Sicherheit zu messen.
-Im folgenden wird eine Auswahl der wichtigsten Metriken für die Phasen vorgestellt.
+Im Folgenden wird eine Auswahl der wichtigsten Metriken für die Phasen vorgestellt.
 
 \paragraph{Phase 1: Anforderungsanalyse}
 
@@ -600,9 +600,9 @@ Für die Auswertung dieser Metriken schlagen die Autoren vor, dass diese Metrike
 Dabei werden die Metriken \ac{srrd}, \ac{srse} und \ac{sri} als abhängig definiert, während \ac{nsrg} als unabhängig betrachtet wird.
 Das Resultat dieser Rechnung ist die Funktion \alpha, welche die Effektivität dieser Phase in Bezug auf die Sicherheit misst.
 Alpha wird mit der Formel~\ref{eq:alpha} berechnet, wobei Y die Summe der Werte der Metriken \ac{srrd}, \ac{srse} und \ac{sri} ist.
-\alpha ist im Interval von -1 bis 1 Aussagekräftig, ein größerer Wert bedeutet eine bessere Effektivität.
-Ein wert von -1 bedeutet das Sicherheit in der Phase nicht berücksichtigt wurde 
-und ein Wert größer als 1 bedeutet das die Effektivität nicht bewertet werden kann.
+\alpha~ist im Interval von -1 bis 1 aussagekräftig, ein größerer Wert bedeutet eine bessere Effektivität.
+Ein Wert von -1 bedeutet, dass Sicherheit in der Phase nicht berücksichtigt wurde 
+und ein Wert größer als 1 bedeutet, dass die Effektivität nicht bewertet werden kann.
 \begin{equation} \label{eq:alpha}
   \alpha = \frac{ \left( 5,2421 - Y \right) }{ NSRG }
 \end{equation}
@@ -618,11 +618,11 @@ Die Autoren definieren für diese Phase drei Metriken.
   \item \textbf{Number of Design stage Security Errors \acs{ndse}}: Misst die Anzahl der Sicherheitsfehler, welche aus dem Softwaredesign resultieren. 
 \end{itemize}
 Für die Auswertung dieser Metriken multipizieren die Autoren die Metriken \ac{dtte} und \ac{ndse}, das Ergebnis ist \beta. 
-Da \ac{dtte} den Anzeil von Tools und Tests an dem resultierenden Design misst und \ac{ndse} die Fehler welche aus dieser Phase entstehen zählt, 
-beschreibt \beta die Effektivität der Designphase in Bezug auf die Sicherheit.
-\beta wird mit der Formel~\ref{eq:beta} berechnet und ist immer größer gleich 0. 
-Der \beta-Wert sollte zwischen 0 und 1 liegen, ein größerer Wert bedeutet eine schlechtere Effektivität.
-Ein \beta-Wert von 0 impliziert, dass das Testing sehr Effektiv ist und es keine Fehler in der Designphase gibt.
+Da \ac{dtte} den Anteil von Tools und Tests an dem resultierenden Design misst und \ac{ndse} die Fehler, welche aus dieser Phase entstehen zählt, 
+beschreibt \beta~die Effektivität der Designphase in Bezug auf die Sicherheit.
+\beta~wird mit der Formel~\ref{eq:beta} berechnet und ist immer größer gleich 0. 
+Der \beta~-Wert sollte zwischen 0 und 1 liegen, ein größerer Wert bedeutet eine schlechtere Effektivität.
+Ein \beta~-Wert von 0 impliziert, dass das Testing sehr effektiv ist und es keine Fehler in der Designphase gibt.
 \begin{equation} \label{eq:beta}
   \beta = NDSE * DTTE
 \end{equation}
@@ -630,13 +630,13 @@ Ein \beta-Wert von 0 impliziert, dass das Testing sehr Effektiv ist und es keine
 \paragraph{Phase 3: Implementierung}
 
 In dieser Phase wird Sicherheit durch Input- und Outputvalidierung und durch die Verwendung von guten Programmierstandards erreicht.
-Die Autoren beschreiben hier drei Metriken um die Sicherheitsanstrengungen der Entwickler zu messen.
+Die Autoren beschreiben hier drei Metriken, um die Sicherheitsanstrengungen der Entwickler zu messen.
 \begin{itemize}
   \item \textbf{Percent of Secure Coding Aspects \acs{psca}}: Misst das Verhälltnis der Sicherheitsrelevanten Coding-Aspekte in der Entwicklungsphase im Vergleich zu den Designaspekten (aus der Designphase).
-  \item \textbf{Percent use of Coding Standards \acs{pcs}}: Misst den Anteil an Coding-Standards für sichere Entwicklung, die verwendet wurden. Sie kann als ein Annährung für \ac{nse} dienen.
+  \item \textbf{Percent use of Coding Standards \acs{pcs}}: Misst den Anteil an Coding-Standards für sichere Entwicklung, die verwendet wurden. Sie kann als eine Annährung für \ac{nse} dienen.
   \item \textbf{Number of Security Errors \acs{nse}}: Misst die Anzahl an Programmierfehlern, welche im Programm vorhanden sind oder durch externe Librarys eingebracht wurden.
 \end{itemize}
-Für die Auswertung verwenden die Autoren wird hier wieder die Methode der kleinsten Quadrate verwendet.
+Für die Auswertung verwenden die Autoren wird hier wieder die Methode der kleinsten Quadrate.
 Der resultierende Wert \gamma (Gleichung~\ref{eq:gamma}) beschreibt die Effektivität der Implementierungsphase in Bezug auf die Sicherheit.
 Ein negativer \gamma Wert deutet auf eine hohe Fehleranzahl hin und ein Wert nahe 0 deutet auf eine gute Effektivität der Phase hin.
 \begin{equation} \label{eq:gamma}
@@ -648,27 +648,27 @@ Ein negativer \gamma Wert deutet auf eine hohe Fehleranzahl hin und ein Wert nah
 In dieser Phase wird die Software auf Sicherheitslücken getestet.
 Die wichtigsten Metriken sind folgende.
 \begin{itemize}
-  \item \textbf{Process Effectiveness \acs{pe}}: Beschreibt das Verhältnis zwischen der Anzahl der entdeckten Sicherheitslücken und der Anzahl der Module, die Sicherheitstest unterzogen wurden.
+  \item \textbf{Process Effectiveness \acs{pe}}: Beschreibt das Verhältnis zwischen der Anzahl der entdeckten Sicherheitslücken und der Anzahl der Module, die Sicherheitstests unterzogen wurden.
   \item \textbf{Security Testing Ratio \acs{str}}: Misst den Anteil der Module, die Sicherheitstests unterzogen wurden.
 \end{itemize}
 
 \paragraph{Phase 5: Betrieb und Wartung}
 
-In dieser Phase werden Risikobewertungen und Sicherheitsanalysen durchgeführt um bei Patches eingebrachte Sicherheitsfehler zu finden.
+In dieser Phase werden Risikobewertungen und Sicherheitsanalysen durchgeführt, um bei Patches eingebrachte Sicherheitsfehler zu finden.
 Außerdem findet hier das Logging, Monitoring und die Analyse von Sicherheitsereignissen statt.
 Die Autoren beschreiben hier drei Metriken.
 \begin{itemize}
   \item \textbf{Mean Time to Complete Security Changes \acs{mtcsc}}: Schätzt die durchschnittliche Zeit, die es braucht um einen Sicherheitsfehler zu beheben. 
   \item \textbf{Rate of Vulnerability Assessments \acs{rva}}: Misst die Anzahl der Sicherheitsanalysen pro Quartal.
-  \item \textbf{Ratio of Changes due to security considerations \acs{rsc}}: Misst den Anteil der Änderungen am System auf Grund neuer Sicherheitsanforderungen im Vergleich zur gesammtheit der Systemänderungen.
+  \item \textbf{Ratio of Changes due to security considerations \acs{rsc}}: Misst den Anteil der Änderungen am System, auf Grund neuer Sicherheitsanforderungen im Vergleich zur Gesammtheit der Systemänderungen.
 \end{itemize}
 
 \subsubsection{Security Metrics for Source Code Structures~\cite{Chowdhury_Chan_Zulkernine_2008}}
 
 In dem Paper Security Metrics for Source Code Structures werden drei Metriken vorgestellt, 
-welche das Messen der Sicherheit auf Quellcode-Ebene ermöglicen.
+welche das Messen der Sicherheit auf Quellcode-Ebene ermöglichen.
 Ziel ist es eine Bewertung der Code-Qualität durchzuführen und 
-festzustellen ob Fehler oder Unreinheiten vorhanden sind, die ein Angreifer ausnutzen könnte.
+festzustellen, ob Fehler oder Unreinheiten vorhanden sind, die ein Angreifer ausnutzen könnte.
 Die Metriken sind folgende.
 
 \paragraph{Stall Ratio \acs{sr}}
@@ -681,9 +681,9 @@ Die Stall Ratio wird mit der Formel~\ref{eq:sr} berechnet.
 \end{equation}
 
 % Villeicht ein Beispiel?
-Nicht alle Stall Statements sind schlecht, gerade das Schreiben von Logs, Fehlermeldungen, etc. sind notwendig.
-Dennoch sollte auch die Anzahl sollten auch diese Stall Statements nicht allzu oft vorkommen.
-Angreifer nutzen häufig Denial of Service Angriffe um die Verfügbarkeit von Systemen zu beeinträchtigen.
+Nicht alle Stall Statements sind schlecht, gerade das Schreiben von Logs, Fehlermeldungen etc. sind notwendig.
+Dennoch sollten auch diese Stall Statements nicht allzu oft vorkommen.
+Angreifer nutzen häufig Denial of Service Angriffe, um die Verfügbarkeit von Systemen zu beeinträchtigen.
 Eine hohe Anzahl an Stall Statements kann die Auswirkungen eines solchen Angriffs verstärken.
 
 \paragraph{Coupling Corruption Propagation \acs{ccp}}
@@ -695,7 +695,7 @@ Die Effekte einer Kopplung können sich schnell auf mehrere Methoden tiefer in d
 Angreifer können so Werte in einer Methode generieren, die dann Fehler in einer anderen Methode verursachen.
 Coupling Corruption Propagation \ac{ccp} bestimmt die Anzahl der Methoden, 
 die durch einen Fehler in einer Methode beeinflusst werden können.
-Hierfür wird die Anzahl der Kindmethoden gezählt, mit die einem Parameter aufgerufen werden, 
+Hierfür wird die Anzahl der Kindmethoden gezählt, die mit einem Parameter aufgerufen werden, 
 welcher auf einem Parameter der Originalmethode beruht.
 Mit einer geringeren Kopplung ist auch der \ac{ccp} geringer.
 Kopplung ist häufig unumgänglich, Methoden mit einer hohen Kopplung sollten daher ausführlich getestet werden.
@@ -710,7 +710,7 @@ Andere Aspekte des Objekts sind elementar für das Funktionieren des Programms,
 wenn sie verändert werden kann das Programm instabil werden und somit ein Sicherheitsrisiko darstellen.
 Es gilt, je höher die Anzahl dieser kritischen Elemente in einer Klasse, desto höher ist das Sicherheitsrisiko.
 Um dieses Risiko zu messen, wird der Anteil der kritischen Datenelemente in einem Objekt berechnet \ac{cer}.
-Wichtig ist hierbei, dass nur datenelemente Berücksichtigt werden, 
+Wichtig ist hierbei, dass nur datenelemente berücksichtigt werden, 
 die während der Laufzeit des Programms durch einen Benutzer verändert werden können.
 Die Formel für die Berechnung des \ac{cer} ist in der Formel~\ref{eq:cer} angegeben.
 \begin{equation} \label{eq:cer}
@@ -720,23 +720,23 @@ Die Formel für die Berechnung des \ac{cer} ist in der Formel~\ref{eq:cer} angeg
 
 \subsubsection{Security Metrics for Software Systems~\cite{Wang_Wang_Guo_Xia_2009}}
 
-In dem Paper Security Metrics for Software Systems nutzen die Autoren \ac{cve}s (Common Vulnerabilities and Exposures) 
+In dem Paper Security Metrics for Software Systems nutzen die Autoren \ac{cve}, 
 um Schwachstellen in einem Softwaresystem zu identifizieren. 
-Die Menge an \ac{cve}s, für die ein System anfällig ist diehnt als Indikator für ein potentiell höheres Sicherheitsrisiko.
+Die Menge an \ac{cve}s, für die ein System anfällig ist, dient als Indikator für ein potentiell höheres Sicherheitsrisiko.
 Dabei wird auch die Schwere der \ac{cve}s nach \ac{cvss}, sowie die Wahrscheinlichkeit der Ausnutzung berücksichtigt.
 
 \paragraph{Common Vulnerabilitie Scoring System \acs{cvss}}
 
 Das \ac{cvss} ist ein System zur Bewertung der Schwere und 
-des damit einhergehenden Risikos einzelner Sicherheitslücken auf ein Computer-Umgbebungen.
-CVSS wurde von der US-Amerikanischen Organisation National Institute of Standards and Technology \ac{nist} entwickelt. 
+des damit einhergehenden Risikos einzelner Sicherheitslücken auf Computer-Umgbebungen.
+CVSS wurde von der US-amerikanischen Organisation \ac{nist} entwickelt. 
 Die Bewertung ist in  3 Kategorien unterteilt, die jeweils eine eigene Skala haben.
-Die Basismetrik misst die grundlegenden Eigenschaften einer Schwachstelle und ist Zeit- und Umgebungsunabhängig.
+Die Basismetrik misst die grundlegenden Eigenschaften einer Schwachstelle und ist zeit- und umgebungsunabhängig.
 Die zeitliche Metrik beschreibt die Schwere einer Schwachstelle in Abhängigkeit von der Zeit.
 Die Umgebungs-Metrik beschreibt die Schwere einer Schwachstelle in Abhängigkeit der Umgebung des Benutzers.
 Für die Bewertung werden mehrere Fragen zu den Metriken mit einem Wert zwischen 0 und 10 beantwortet.
-Der durchschnitt der Werte aller Fragen einer Metrik ergibt den Wert für dieser Metrik (0 - 10).
-Für die Zeitliche Bewertung wird die Bewertung der Basis- und der Zeitmetrik addiert.
+Der durchschnitt der Werte aller Fragen einer Metrik ergibt den Wert für diese Metrik (0 - 10).
+Für die zeitliche Bewertung wird die Bewertung der Basis- und der Zeitmetrik addiert.
 Für die Umgebungs-Bewertung werden alle drei Metriken miteinander verrechnet.
 
 \paragraph{Common Vulnerabilities and Exposures \acs{cve}}
@@ -756,11 +756,11 @@ verknüpfen diese mit den entsprechenden Produkten und der \ac{cvss} Bewertung.
 \paragraph{Software Sicherheits Metrik}
 
 Für das Erstellen der Metrik haben die Forscher nun vorgeschlagen, 
-die wichtigsten Schwachstelle einer Software zu identifizieren und \ac{cve} Einträge zu diesen zu finden.
-Für diese einzelne Schwachstellen wird dann die durchschnittliche \ac{cvss} Bewertung aller CVEs berechnet.
+die wichtigsten Schwachstellen einer Software zu identifizieren und \ac{cve} Einträge zu diesen zu finden.
+Für diese einzelnen Schwachstellen wird dann die durchschnittliche \ac{cvss} Bewertung aller \ac{cve}s berechnet.
 So kann die Schwere der Schwachstellen gemessen werden.
 Um das Risiko \(R\) für ein Ausnutzen dieser Schwachstelle in die Bewertung einfließen zu lassen, 
-schlagen die Forscher vor die Anzahl der \ac{cve}s einer Schwachstelle \(K\) mit dem Zeitraum (in Monaten), in dem die Schwachstelle in dem System existierte \(M\) zu verrechnen (siehe Gleichung~\ref{eq:cve_risk}).
+schlagen die Forscher vor, die Anzahl der \ac{cve}s einer Schwachstelle \(K\) mit dem Zeitraum (in Monaten) in dem die Schwachstelle in dem System existierte \(M\) zu verrechnen (siehe Gleichung~\ref{eq:cve_risk}).
 \begin{equation} \label{eq:cve_risk}
   R = \frac{ K }{ M }
 \end{equation}
@@ -771,15 +771,15 @@ Mit dieser Formel lässt sich die Sicherheit der Software \(s\) berechnen.
 \end{equation}
 
 \paragraph{Verbesserungsansätze}
-In diesem Paper wenden die Autoren viel Zeit auf um Schwachstellen in dem System zu identifizieren und zu Kathegorisieren.
+In diesem Paper wenden die Autoren viel Zeit auf, um Schwachstellen in dem System zu identifizieren und zu kathegorisieren.
 Dieser händische Prozess lässt sich durch die Verwendung der National Vulnerability Database deutlich vereinfachen.
 Hier werden Softwaresysteme und Packete aufgelistet, welche Schwachstellen aufweisen und 
-es wird Angemerkt ab welcher Version diese Schwachstelle behoben wurde.
-Zur vereinfachung dieses Prozesses kann es Hilfreich sein einen Scanner zu verwenden, 
-welcher die verwendete Software und Packete identifiziert und 
-die Schwachstellen in der \ac{nvd} Datenbank mit den identifizierten Packeten vergleicht.
+es wird angemerkt, ab welcher Version diese Schwachstelle behoben wurde.
+Zur Vereinfachung dieses Prozesses kann es hilfreich sein, einen Scanner zu verwenden, 
+welcher die verwendete Software und Pakete identifiziert und 
+die Schwachstellen in der \ac{nvd} Datenbank mit den identifizierten Paketen vergleicht.
 Die gefundenen Schwachstellen können zusammen mit dem Zeitraum, 
-in dem der Scanner diese im System gefunden hat, verwendet werden um die Metrik zu berechnen.
+in dem der Scanner diese im System gefunden hat, verwendet werden um, die Metrik zu berechnen.
 So kann eine höhere Automatisierung erreicht werden.
 
 \subsubsection{Kombination der Ansätze und Bewertung der Metriken}
@@ -829,22 +829,22 @@ So kann eine höhere Automatisierung erreicht werden.
 \end{center}
 
 In Tabelle \ref{table:security_metrics_1} und \ref{table:security_metrics_2} ist aufgeschlüsselt welche Charakteristika der \ac{iso} 25010 durch die Metriken abgedeckt werden.
-Tabelle \ref{table:security_metrics_1} gibt einen Überblick über die Abdeckung der Metriken des ersten Artikels~\cite{Jain2014SecurityMA}
+Tabelle \ref{table:security_metrics_1} gibt einen Überblick über die Abdeckung der Metriken des ersten Artikels~\cite{Jain2014SecurityMA}.
 Da in der Analysephase die Grundlagen für alle weiteren Phasen der Softwareentwicklung gelegt werden, 
-deckt der \alpha-Wert alle Charakteristika der \ac{iso} 25010 ab.
-Der \beta-Wert gibt eine Aussage über die Effektivität der Designphase, 
+deckt der \alpha~-Wert alle Charakteristika der \ac{iso} 25010 ab.
+Der \beta~-Wert gibt eine Aussage über die Effektivität der Designphase, 
 der Fokus liegt daher auf der Identifikation, Authorisierung und weiteren nicht-funktionalen Anforderungen.
-Der \gamma-Wert gibt eine Aussage über die Effektivität der Implementierungsphase, daher ist er wichtig für die Integrität, Unbestreitbarkeit und Verantwortlichkeit.
+Der \gamma~-Wert gibt eine Aussage über die Effektivität der Implementierungsphase, daher ist er wichtig für die Integrität, Unbestreitbarkeit und Verantwortlichkeit.
 Process Effectiveness und Security Testing Ratio ermöglichen die Bewertung der Testphase und 
-die Effektivität darin Fehler und Sicherheitslücken festzustellen. 
+die Effektivität, darin Fehler und Sicherheitslücken festzustellen. 
 Daher liegt der Fokus hier auf Vertraulichkeit und Integrität.
 Dasselbe gilt auch für die Metriken der Betriebs- und Wartungsphase.
 
 Tabelle \ref{table:security_metrics_2} gibt einen Überblick über die Abdeckung der Metriken der anderen beiden Paper~\cite{Chowdhury_Chan_Zulkernine_2008}~\cite{Wang_Wang_Guo_Xia_2009}.
 Da das erste Paper sich auf die Sicherheit auf der Quellcode-Ebenen konzentriert, deckten die Metriken nur das Charakteristika der Integrität ab.
-Die Tiefe der Analyse ist macht diese Metriken sehr effektiv für die Analyse des Quellcodes.
-Das zweite Paper Fokussiert sich auf die Bewertung von Softwaresystemen auf Basis der Anfälligkeit für bekannte Schwachstellen.
-Da die Art der Schwachstellen vielseitig ist können so abhängig von den betrachteten Systemen und Komponenten auch alle Charakteristika der \ac{iso} 25010 abgedeckt werden.
+Die Tiefe der Analyse macht diese Metriken sehr effektiv für die Analyse des Quellcodes.
+Das zweite Paper fokussiert sich auf die Bewertung von Softwaresystemen auf Basis der Anfälligkeit für bekannte Schwachstellen.
+Da die Art der Schwachstellen vielseitig ist, können so abhängig von den betrachteten Systemen und Komponenten auch alle Charakteristika der \ac{iso} 25010 abgedeckt werden.
 
 \subsection{Wartbarkeit}
 
@@ -855,22 +855,21 @@ um damit die Modifizierbarkeit zu charakterisieren~\cite{maintainability_metrics
 
 Diese Metriken lassen sich allerdings nur bei konkreten Wartungsaufgaben messen.
 Das ist problematisch, da so die Qualität der Software nur durch großen Aufwand bestimmt werden kann.
-Ziel hier ist es daher eine Metrik zu finden, mit der sich die Wartbarkeit ohne großen Aufwand bestimmen lässt.
+Ziel ist es daher eine Metrik zu finden, mit der sich die Wartbarkeit ohne großen Aufwand bestimmen lässt.
 Das Paper \emph{A Practical Model for Measuring Maintainability} von Ilja Heitlager, Tobias Kuipers und Joost Visser~\cite{maintainability_metrics}
 stellt eine Möglichkeit dar, die Wartbarkeit ohne großen Aufwand zu messen.
-Allerdings basiert diese Paper auf dem älteren \ac{iso} 9126 Qualitätsmodell~\cite{maintainability_metrics,ISO9126}.
+Allerdings basiert dieses Paper auf dem älteren \ac{iso} 9126 Qualitätsmodell~\cite{maintainability_metrics,ISO9126}.
 In dieser Arbeit wird die Metrik, die in~\cite{maintainability_metrics} daher erweitert
 und auf das neuere \ac{iso} 25010 Qualitätsmodell angepasst.
 
 Für diese Metrik werden einige einfache Kennzahlen der Software kombiniert,
-um Kennwerte für die Jeweiligen Subcharakteristika der Wartbarkeit zu berechnen.
+um Kennwerte für die jeweiligen Subcharakteristika der Wartbarkeit zu berechnen.
 Diese Kennwerte können dann verwendet werden, um einen Gesamtwert
 für die Wartbarkeit der Software zu bekommen.
-Die Kennzahlen die Genutzt werden sind.
 
 \paragraph{Quellcodevolumen}
 
-Die Zahl der effektiven Quellcodezeilen im gesamten Bereich der analysiert werden soll.
+Die Zahl der effektiven Quellcodezeilen im gesamten Bereich, der analysiert werden soll.
 Je geringer das Quellcodevolumen ist,
 desto einfacher ist es eine Übersicht über den Bereich zu bekommen,
 der analysiert werden soll.
@@ -878,8 +877,8 @@ Also ist niedriger besser.
 
 \paragraph{Komplexität der Einheiten}
 
-Die zyklomatische Komplexität einer Einheit sagt aus wie Komplex eine Einheit ist,
-und damit auch wie komplex Wartungsaufgaben sein können.
+Die zyklomatische Komplexität einer Einheit sagt aus wie Komplex eine Einheit ist
+und damit auch, wie komplex Wartungsaufgaben sein können.
 Eine Einheit ist dabei das kleinste ausführbare Stück Code~\cite{maintainability_metrics}.
 Je nach Programmiersprache kann eine Einheit eine Funktion, eine Klasse oder aber das gesamte Programm sein~\cite{maintainability_metrics}.
 Eine geringere Komplexität spricht für besser wartbare Software.
@@ -929,14 +928,14 @@ Eine einfache Metrik für die Modularität ist die Modulanzahl
 in dem betrachteten Teil der Software.
 Nachteil dieser Metrik ist, dass sie nicht aussagt,
 inwieweit Änderungen an einem Modul die anderen Module beeinflussen.
-Nach ISO 25010 sollen Änderungen an einem Modul,
+Nach ISO 25010 sollen Änderungen an einem Modul
 die anderen Module möglichst wenig beeinflussen~\cite{ISO25010}.
 
 Eine andere Metrik ist die Einheitengröße.
 Diese gibt auch eine gewisse objektive Aussage über die Modularität.
 Für eine hohe Modularität ist eine geringe Kopplung und
-hohe Kohäsion, also hohe Zusammengehörigkeit, innerhalb der Einheiten nötig um zu gewährleisten,
-dass Änderungen an einem Modul, die anderen Module minimal oder gar nicht beeinflussen.
+hohe Kohäsion, also hohe Zusammengehörigkeit, innerhalb der Einheiten nötig, um zu gewährleisten,
+dass Änderungen an einem Modul die anderen Module minimal oder gar nicht beeinflussen.
 Viele kleine Einheiten sprechen für eine hohe Kohäsion,
 da in einer kleinen Einheit nur wenig Funktionalität,
 die dann aber stark zusammenhängt, implementiert werden kann.
@@ -978,7 +977,7 @@ Eine hohe Quellcode-Duplikation erschwert hingegen das Verständnis.
 
 In~\cite{maintainability_metrics} wird die Komplexität der Einheiten und die Code-Duplikation
 als Metrik für die Modifizierbarkeit genannt.
-Code-Duplikation verringert die Modifizierbarkeit, da an Stellen mit dupliziertem Code,
+Code-Duplikation verringert die Modifizierbarkeit, da an Stellen mit dupliziertem Code
 alle Teile des duplizierten Codes gleichermaßen geändert werden müssen.
 Das erhöht den Modifikations-Aufwand stark und erhöht die Chance,
 dass bei Modifikationen vergessen wird Teile des duplizierten Codes zu ändern und so Fehler im Programm entstehen.
@@ -1024,7 +1023,7 @@ In Tabelle~\ref{table:maintainability_metrics} wird die Zugehörigkeit
 der zuvor vorgestellten Quellcode Kennzahlen zu den
 Wartbarkeit-Subcharakteristika dargestellt.
 Diese Tabelle erweitert die in~\cite{maintainability_metrics}
-vorgestellte Tabelle um die Änderungen die der neuere \ac{iso} 25010 Qualitätsstandard
+vorgestellte Tabelle um die Änderungen, die der neuere \ac{iso} 25010 Qualitätsstandard
 gegenüber dem alten \ac{iso} 9126 Standard bringt.
 Damit kann nun Software verglichen werden und Qualitätsänderungen
 durch Änderungen an der Software gemessen werden.
@@ -1032,7 +1031,7 @@ Im Gegensatz zu~\cite{maintainability_metrics}
 wird hier keine konkrete Kennzahl für die Wartbarkeit vorgestellt.
 Vielmehr können mit dieser Metrik Softwarestände und Softwaresysteme relativ zueinander verglichen werden.
 Dafür werden die relativen Unterschiede in den einzelnen Metriken eins zu eins nach der Tabelle verrechnet,
-um einen Wert für die Jeweilige Subcharakterstik der Wartbarkeit zu erhalten.
+um einen Wert für die jeweilige Subcharakterstik der Wartbarkeit zu erhalten.
 Um daraus einen Wert für die Wartbarkeit zu erhalten,
 werden die Werte der Subcharakteristika eins zu eins verrechnet.
 
@@ -1043,11 +1042,11 @@ Diese Entscheidung kann je nach Anwendung der Metrik getroffen werden.
 
 Es ist denkbar diese Metrik automatisch durch
 Softwaretools zu generieren.
-Das ermöglicht es diese Metrik, als Auswertung von Software
+Das ermöglicht es diese Metrik als Auswertung von Software
 in ein \ac{cicd} System zu integrieren.
 Damit können Änderungen an der Software ausgewertet werden
 und gewarnt werden, wenn die Wartbarkeit durch Änderungen an der Software verschlechtert wird.
-Im extremsten Fall, kann eine Änderung auch abgelehnt werden, wenn die Wartbarkeit verschlechtert wird.
+Im extremsten Fall kann eine Änderung auch abgelehnt werden, wenn die Wartbarkeit verschlechtert wird.
 
 \section{Ausblick}
 
@@ -1073,16 +1072,16 @@ die Gewichtungen an andere Wartbarkeit-Metriken angepasst werden.
 
 Der Bereich Sicherheit ist sehr umfangreich und es gibt viele verschiedene Ansätze und Metriken.
 Zusammengenommen bieten die behandelten Metriken eine gute Abdeckung der Charakteristika der \ac{iso} 25010 und 
-ermöglicen die Bewertung sowohl auf der tiefen Quellcode-Ebene, als auch mit Hinblick auf das System als ganzes.
+ermöglichen die Bewertung sowohl auf der tiefen Quellcode-Ebene, als auch mit Hinblick auf das System als Ganzes.
 Zusätzlich wird auch der Prozess der Sofwareentwicklung berücksichtigt, 
-der eine elementare Rolle in der Entwicklung von guter, sicherer Software spielt. 
+der eine elementare Rolle in der Entwicklung von guter sicherer Software spielt. 
 Die automatisierte Unsetzung aller Ansätze ist schwer möglich, 
 da gerade im Softwareentwicklungsprozess viele verschiedene Personen und Teams involviert sind.
 Dies macht die Analyse sehr komplex.
 Dennoch lassen sich die Metriken zur Sicherheit auf Quellcode-Ebene und auf CVE-Basis sehr gut automatisieren.
-Eine kombination der beiden Ansätze ist ebenfalls möglich, indem man den Sourcecode und die Abhängigkeiten automatisch scannt. 
+Eine Kombination der beiden Ansätze ist ebenfalls möglich, indem man den Sourcecode und die Abhängigkeiten automatisch scannt. 
 
-In einer weiteren Arbeit ist es außerdem Denkbar weitere Metriken zu finden,
+In einer weiteren Arbeit ist es außerdem denkbar weitere Metriken zu finden,
 mit denen die übrigen Qualitätscharakteristika 
 einfach quantifiziert werden können.
 
