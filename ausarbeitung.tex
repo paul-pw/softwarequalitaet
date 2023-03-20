@@ -401,7 +401,7 @@ dass ein Zugriff auf Daten nur von berechtigten Benutzern durchgeführt werden k
 
 \subsubsection{Integrität}
 
-Die Integrität eines Systems beschreibt wie gut es den unauthorisierten Zugriff 
+Die Integrität eines Systems beschreibt wie gut es den unautorisierten Zugriff 
 oder die Modifikation auf seine Programme oder Daten verhindern kann~\cite{ISO25010}.
 
 \subsubsection{Unbestreitbarkeit}
@@ -410,20 +410,20 @@ Der Grad der Unbestreitbarkeit beschreibt, wie gut ein System beweisen kann,
 dass eine Aktion oder ein Ereignis stattgefunden hat.
 So soll es einer Entität nicht möglich sein, dies zu bestreiten~\cite{ISO25010}.
 
-Nach der \ac{iso} gibt es zwei Möglichkeit dies zu erreichen.
+Nach der \ac{iso} gibt es zwei Möglichkeiten dies zu erreichen.
 Der Ursprungsnachweis ist die erste Möglichkeit. 
-Hier erhällt das System (der Empfänger) einen Nachweis, wer die Aktion oder das Ereignis ausgelöst hat.
+Hier erhält das System (der Empfänger) einen Nachweis, wer die Aktion oder das Ereignis ausgelöst hat.
 Dies verhindert, dass eine Entität bestreiten kann, dass sie die Aktion oder das Ereignis ausgelöst hat~\cite{ISO7498-2}.
 Die zweite Möglichkeit ist der Zustellnachweis.
 Hier erhält die Entität, die die Aktion oder das Ereignis ausgelöst hat, 
 einen Nachweis, dass das System (der Empfänger) die Aktion oder das Ereignis durchgeführt hat.
 Dies verhindert, dass das System bestreiten kann, dass es die Anweisungen erhalten hat~\cite{ISO7498-2}.
-Beide Möglchkeiten können einzeln eingesetzt werden oder auch kombiniert werden.
+Beide Möglichkeiten können einzeln eingesetzt werden oder auch kombiniert werden.
 
 \subsubsection{Verantwortlichkeit}
 
 Verantwortlichkeit gibt an wie gut die Aktionen einer Entität (z.B. Person, System) auf dieses zurückgeführt werden können~\cite{ISO25010}.
-Die Verantwortlichkeit kann durch die \emph{Unnachgibigkeit} und die \emph{Integrität} des Systems beeinflusst werden. 
+Die Verantwortlichkeit kann durch die \emph{Unnachgiebigkeit} und die \emph{Integrität} des Systems beeinflusst werden. 
 
 \subsubsection{Authentizität}
 Der Grad der Gewissheit, mit dem die Identität einer Entität (z.B. Person, System) 
@@ -459,7 +459,7 @@ die eine hohe Wartbarkeit aufweisen,
 werden in der Entwicklung und der Wartung einfacher sein
 als Softwareprodukte oder Systeme,
 die eine geringe Wartbarkeit aufweisen.
-Außerdem muss während des ganzen Entwicklungsprozess
+Außerdem muss während dem ganzen Entwicklungsprozess
 darauf geachtet werden die potenziell geltenden 
 Regeln und Vorschriften zur Wartbarkeit von Software einzuhalten.
 
@@ -566,14 +566,14 @@ wenn die Regeln eingehalten werden.
 
 Sicherheit ist ein Feld, welches in der Informatik sehr weit gefasst ist und in den meisten Themenbereichen eine elementare Rolle spielt.
 Daher ist es nicht verwunderlich, dass es schwer ist allgemeine Metriken für das Messen der Sicherheit von Software zu erarbeiten.
-Es gibt einige Artikel und Konferenz Papiere, die unterschiedliche Ansätze für das definieren von Metriken verfolgen und es gibt einige 
+Es gibt einige Artikel und Konferenz Papiere, die unterschiedliche Ansätze für das Definieren von Metriken verfolgen und es gibt einige 
 Metaanalysen, die die Ergebnisse dieser Arbeiten miteinander vergleichen. 
 Zusätzlich dazu wurden Standards definiert, 
 welche jedoch weit gefasst sind und eine unpräzise Definition für Sicherheits-Metriken liefern~\cite{MeFlado_Fernández-Medina_Piattini_2010}.
 
 Um einen konkreten Ansatz für die Bewertung der Sicherheit mittels Metriken zu finden werden 
 drei unterschiedliche Ansätze (vereinfacht) vorgestellt~\cite{Jain2014SecurityMA}~\cite{Chowdhury_Chan_Zulkernine_2008}~\cite{Wang_Wang_Guo_Xia_2009} und 
-miteinander Kombiniert.
+miteinander kombiniert.
 Ziel ist es so eine Sammlung an Metriken zu erhalten, 
 welche eine Bewertung der Sicherheit einer Software über den Entwicklungsprozess hinweg ermöglichen. 
 Abschließend wird bewertet, inwieweit die Sammlung der Metriken alle Subcharakteristika für Sicherheit im \ac{iso} 25010 Qualitätsmodell abdeckt.
@@ -581,10 +581,10 @@ Zusätzlich wird die Möglichkeit zur Automatisierung des Bewertungsprozesses be
 
 \subsubsection{Security Metrics and Software Development Progression~\cite{Jain2014SecurityMA}}
 
-In ihrem Artikel Security Metrics and Software Development Progression beschreiben die Autoren Smirity Jain und Maya Ingle eine Sammlung von Metriken, 
-welche die Sicherheit von Software über den gesamten Entwicklungsprozesses hinweg messen.
-Mit diesen Metriken ist es möglich im nachhinein die Effektivität der fünf Phasen des Entwicklungsprozesses in Hinblick auf die Sicherheit zu messen.
-Im folgenden wird eine Auswahl der wichtigsten Metriken für die Phasen vorgestellt.
+In ihrem Artikel \emph{Security Metrics and Software Development Progression} beschreiben die Autoren Smirity Jain und Maya Ingle eine Sammlung von Metriken, 
+welche die Sicherheit von Software über den gesamten Entwicklungsprozess hinweg messen.
+Mit diesen Metriken ist es möglich im Nachhinein die Effektivität der fünf Phasen des Entwicklungsprozesses in Hinblick auf die Sicherheit zu messen.
+Im Folgenden wird eine Auswahl der wichtigsten Metriken für die Phasen vorgestellt.
 
 \paragraph{Phase 1: Anforderungsanalyse}
 
@@ -600,9 +600,9 @@ Für die Auswertung dieser Metriken schlagen die Autoren vor, dass diese Metrike
 Dabei werden die Metriken \ac{srrd}, \ac{srse} und \ac{sri} als abhängig definiert, während \ac{nsrg} als unabhängig betrachtet wird.
 Das Resultat dieser Rechnung ist die Funktion \alpha, welche die Effektivität dieser Phase in Bezug auf die Sicherheit misst.
 Alpha wird mit der Formel~\ref{eq:alpha} berechnet, wobei Y die Summe der Werte der Metriken \ac{srrd}, \ac{srse} und \ac{sri} ist.
-\alpha ist im Interval von -1 bis 1 Aussagekräftig, ein größerer Wert bedeutet eine bessere Effektivität.
-Ein wert von -1 bedeutet das Sicherheit in der Phase nicht berücksichtigt wurde 
-und ein Wert größer als 1 bedeutet das die Effektivität nicht bewertet werden kann.
+\alpha ist im Intervall von -1 bis 1 Aussagekräftig, ein größerer Wert bedeutet eine bessere Effektivität.
+Ein wert von -1 bedeutet, dass Sicherheit in der Phase nicht berücksichtigt wurde 
+und ein Wert größer als 1 bedeutet, dass die Effektivität nicht bewertet werden kann.
 \begin{equation} \label{eq:alpha}
   \alpha = \frac{ \left( 5,2421 - Y \right) }{ NSRG }
 \end{equation}
@@ -614,15 +614,15 @@ Hier ist die Umsetzung von nicht-funktionalen Anforderungen, wie Fehlerbehandlun
 Die Autoren definieren für diese Phase drei Metriken.
 \begin{itemize}
   \item \textbf{Security Requirements Statistics \acs{srs}}: Prozentsatz der Sicherheitsanforderungen, welche in der Designphase bedacht wurden.
-  \item \textbf{Design Tools und Test Effectiveness \acs{dtte}}: Misst den Anteil von Analysetools (z.B. Threat Analysis und Attack Patterns) und Testing an den Sicherheitsrelevanten Designaspekten. 
-  \item \textbf{Number of Design stage Security Errors \acs{ndse}}: Misst die Anzahl der Sicherheitsfehler, welche aus dem Softwaredesign resultieren. 
+  \item \textbf{Design Tools und Test Effectiveness \acs{dtte}}: Misst den Anteil von Analysetools (z.B. Threat Analysis und Attack Patterns) und Testing an den sicherheitsrelevanten Designaspekten. 
+  \item \textbf{Number of Design stage Security Errors \acs{ndse}}: Misst die Anzahl der Sicherheitsfehler, welche aus dem Software-Design resultieren. 
 \end{itemize}
-Für die Auswertung dieser Metriken multipizieren die Autoren die Metriken \ac{dtte} und \ac{ndse}, das Ergebnis ist \beta. 
-Da \ac{dtte} den Anzeil von Tools und Tests an dem resultierenden Design misst und \ac{ndse} die Fehler welche aus dieser Phase entstehen zählt, 
+Für die Auswertung dieser Metriken multiplizieren die Autoren die Metriken \ac{dtte} und \ac{ndse}, das Ergebnis ist \beta. 
+Da \ac{dtte} den Anteil von Tools und Tests an dem resultierenden Design misst und \ac{ndse} die Fehler welche aus dieser Phase entstehen zählt, 
 beschreibt \beta die Effektivität der Designphase in Bezug auf die Sicherheit.
 \beta wird mit der Formel~\ref{eq:beta} berechnet und ist immer größer gleich 0. 
 Der \beta-Wert sollte zwischen 0 und 1 liegen, ein größerer Wert bedeutet eine schlechtere Effektivität.
-Ein \beta-Wert von 0 impliziert, dass das Testing sehr Effektiv ist und es keine Fehler in der Designphase gibt.
+Ein \beta-Wert von 0 impliziert, dass das Testing sehr effektiv ist und es keine Fehler in der Designphase gibt.
 \begin{equation} \label{eq:beta}
   \beta = NDSE * DTTE
 \end{equation}
@@ -630,10 +630,10 @@ Ein \beta-Wert von 0 impliziert, dass das Testing sehr Effektiv ist und es keine
 \paragraph{Phase 3: Implementierung}
 
 In dieser Phase wird Sicherheit durch Input- und Outputvalidierung und durch die Verwendung von guten Programmierstandards erreicht.
-Die Autoren beschreiben hier drei Metriken um die Sicherheitsanstrengungen der Entwickler zu messen.
+Die Autoren beschreiben hier drei Metriken, um die Sicherheitsanstrengungen der Entwickler zu messen.
 \begin{itemize}
-  \item \textbf{Percent of Secure Coding Aspects \acs{psca}}: Misst das Verhälltnis der Sicherheitsrelevanten Coding-Aspekte in der Entwicklungsphase im Vergleich zu den Designaspekten (aus der Designphase).
-  \item \textbf{Percent use of Coding Standards \acs{pcs}}: Misst den Anteil an Coding-Standards für sichere Entwicklung, die verwendet wurden. Sie kann als ein Annährung für \ac{nse} dienen.
+  \item \textbf{Percent of Secure Coding Aspects \acs{psca}}: Misst das Verhältnis der sicherheitsrelevanten Coding-Aspekte in der Entwicklungsphase im Vergleich zu den Designaspekten (aus der Designphase).
+  \item \textbf{Percent use of Coding Standards \acs{pcs}}: Misst den Anteil an Coding-Standards für sichere Entwicklung, die verwendet wurden. Sie kann als eine Annäherung für \ac{nse} dienen.
   \item \textbf{Number of Security Errors \acs{nse}}: Misst die Anzahl an Programmierfehlern, welche im Programm vorhanden sind oder durch externe Librarys eingebracht wurden.
 \end{itemize}
 Für die Auswertung verwenden die Autoren wird hier wieder die Methode der kleinsten Quadrate verwendet.
@@ -654,7 +654,7 @@ Die wichtigsten Metriken sind folgende.
 
 \paragraph{Phase 5: Betrieb und Wartung}
 
-In dieser Phase werden Risikobewertungen und Sicherheitsanalysen durchgeführt um bei Patches eingebrachte Sicherheitsfehler zu finden.
+In dieser Phase werden Risikobewertungen und Sicherheitsanalysen durchgeführt, um bei Patches eingebrachte Sicherheitsfehler zu finden.
 Außerdem findet hier das Logging, Monitoring und die Analyse von Sicherheitsereignissen statt.
 Die Autoren beschreiben hier drei Metriken.
 \begin{itemize}
